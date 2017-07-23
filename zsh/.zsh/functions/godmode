@@ -1,0 +1,17 @@
+function godmode() {
+### make user root and start a terminal multiplexer
+	TERMINAL_MULTIPLEXER=/usr/bin/tmux
+#	TERMINAL_MULTIPLEXER=/usr/bin/screen
+
+	case $USER in
+		(root)
+			cd /etc
+			$TERMINAL_MULTIPLEXER
+			;;
+		(*)
+			/usr/bin/su --login --shell=$SHELL --command="cd /etc; $TERMINAL_MULTIPLEXER";
+			;;
+	esac
+}
+
+#  vim: set ts=4 sw=2 tw=0 et filetype=zsh :

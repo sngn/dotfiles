@@ -1,0 +1,6 @@
+function install_zplug() {
+  export ZPLUG_HOME=~/.zplug
+  git clone https://github.com/zplug/zplug $ZPLUG_HOME
+}
+
+#  vim: set ts=4 sw=2 tw=0 et filetype=zsh :
