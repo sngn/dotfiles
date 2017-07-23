@@ -1,0 +1,2 @@
+
+Plug 'Shougo/deoplete.nvim'

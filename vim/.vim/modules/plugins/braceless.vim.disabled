@@ -1,0 +1,2 @@
+autocmd FileType * BracelessEnable +highlight-cc2 
+"autocmd FileType python BracelessEnable +indent +fold +highlight-cc2 
