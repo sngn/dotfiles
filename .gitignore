@@ -1,0 +1,28 @@
+*.orig
+
+#### Home ####
+.gitconfig
+.xprofile
+
+#### i3 window manager ####
+
+#### VIM ####
+vim/.vim/nplugged
+vim/.vim/nsessions
+vim/.vim/plugged
+vim/.vim/sessions
+vim/.vim/undo
+
+vim/.vim/.netrwhist
+vim/.vim/modules/test.py
+vim/.vim/spell
+vim/.vim/startuptime
+
+#### TMUX ####
+tmux/.tmux/plugins
+!tmux/.tmux/plugins/tpm
+tmux/.tmux/resurrect
+
+#### ZSH ####
+zsh/.zsh/zsh_history
+
