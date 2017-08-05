@@ -1,3 +1,9 @@
 [submodule "tmux/.tmux/plugins/tpm"]
 	path = tmux/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
+[submodule "i3wm/bin/i3blocks/i3blocks-contrib"]
+	path = i3wm/bin/i3blocks/i3blocks-contrib
+	url = https://github.com/vivien/i3blocks-contrib.git
+[submodule "i3wm/bin/i3blocks/i3blocks"]
+	path = i3wm/bin/i3blocks/i3blocks
+	url = https://github.com/Anachron/i3blocks.git
