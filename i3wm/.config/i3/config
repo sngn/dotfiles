@@ -194,10 +194,19 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+#bar {
+        #status_command i3status
+        ##tray_output primary
+#}
+
 bar {
-        status_command i3status
+        status_command SCRIPT_DIR=~/bin/i3blocks I3BLOCKS_CONTRIB_DIR=$SCRIPT_DIR/i3blocks-contrib i3blocks
         #tray_output primary
 }
+
+#bar {
+        #status_command python ~/.config/i3pystatus/config.py
+#}
 
 ### custom configuration begins now
 ## Lock Screen
@@ -223,10 +232,11 @@ bindsym $mod+o scratchpad show
 ## menu
 #bindsym mod1+space exec dmenu_run
 #bindsym mod1+space exec --no-startup-id i3-dmenu-desktop
-bindsym mod1+space exec rofi -show run 
+#bindsym Mod1+space exec rofi -show run 
+bindsym Mod1+space exec "rofi -combi-modi \\"drun,run\\" -show combi -modi combi"
 # rofi bindings
-#bindsym F9 exec rofi -show run -fg "#f1f1f1" -bg "#333333" -hlfg "#ffffff" -hlbg "#336699" -o 85
-bindsym F12 exec rofi -show window -fg "#000000" -bg "#ff0000" -hlfg "#f0f0f0" -hlbg "#00ff00" -o 85
+bindsym F12 exec "rofi -show window"
+#bindsym F12 exec "rofi -show window -color-normal \\"#000000,#ff0000,#222222,#eeffee,#202020\\""
 
 ## extra keyboard keys
 bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -234,8 +244,10 @@ bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ 
 bindsym XF86AudioMute exec /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
 #bindsym XF86Launch1 exec /usr/bin/pactl play-sample that_was_easy
 
-bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
+#bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
+#bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
+bindsym XF86MonBrightnessUp   exec "/usr/bin/xbacklight -inc 10 && notify-send -u low -t 1 \\"Brightness\\" \\"$(xbacklight -get)%\\""
+bindsym XF86MonBrightnessDown exec "/usr/bin/xbacklight -dec  5 && notify-send -u low -t 1 \\"Brightness\\" \\"$(xbacklight -get)%\\""
 
 ## Window Management
 for_window [class="dolphin" title="^Copying"] floating enable
