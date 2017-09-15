@@ -14,7 +14,7 @@ set autoread            " Set to auto read when a file is changed from the outsi
 set backspace=indent,eol,start
 set binary              " Write files as they are, don't mess with line endings etc.
 "set clipboard=unnamedplus
-"set completeopt-=preview
+set completeopt-=preview
 if !has('nvim')
     set cryptmethod=blowfish2
     set encoding=utf8       " Set utf8 as standard encoding and en_US as the standard language
