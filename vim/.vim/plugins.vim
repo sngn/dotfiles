@@ -40,6 +40,7 @@ Plug 'jmcomets/vim-pony'                 "Pony power for working with Django pro
 "Plug '~/.fzf', { 'do': './install --bin --no-update-rc' } "junegunn/fzf already cloned to ~/.fzf
 "Plug '~/.fzf', { 'do': './install --bin --no-update-rc --64' } "junegunn/fzf already cloned to ~/.fzf
 "Plug 'junegunn/fzf.vim'                  "fzf ❤️ vim
+Plug 'lervag/vimtex'                     "A modern vim plugin for editing LaTeX files
 Plug 'majutsushi/tagbar'                 "Vim plugin that displays tags in a window, ordered by scope http://majutsushi.github.com/tagbar/
 Plug 'michaeljsmith/vim-indent-object'   "plugin that defines a new text object representing lines of code at the same indent level
 Plug 'mileszs/ack.vim'
@@ -51,7 +52,7 @@ Plug 'othree/jspc.vim'                   "JavaScript Parameter Complete
 Plug 'rafi/awesome-vim-colorschemes'     "Collection of awesome color schemes for Neo/vim, merged for quick use
 "Plug 'rking/ag.vim'                      "Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
 Plug 'scrooloose/nerdcommenter'          "Vim plugin for intensely orgasmic commenting
-"Plug 'scrooloose/syntastic'              "Syntastic is a syntax checking plugin
+Plug 'scrooloose/syntastic'              "Syntastic is a syntax checking plugin
 Plug 'sukima/xmledit'                    "A filetype plugin for VIM to help edit XML files
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } "Tern plugin for Vim
 "Plug 'tpope/vim-fugitive'                "fugitive.vim: a Git wrapper so awesome, it should be illegal
