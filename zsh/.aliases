@@ -5,36 +5,36 @@ alias -g ...='../..'
 alias -g ....='../../..'
 
 # PACMAN
-#alias pacman='/usr/bin/pacman'          # use different default options
+#alias pacman='/usr/bin/pacman'         # use different default options
 alias pacman='/usr/bin/pacman --cachedir /tmp/cache/package_cache'
-alias pac='pacman -S'					# default action - install one or more packages
-alias pacc='pacman -Sc'					# [c]lean cache - delete all not currently installed package files
-alias paci='pacman -Si'					# [i]nfo - show information about a package
-alias pacii='pacman -Sii'				# Display detailed information about a given package in the repositories
-alias pacl='pacman -Sl'					# [l]ist - list all packages of a repository
-alias pacll='pacman -Qqm'				# [l]ist [l]ocal - list all packages which were locally installed (e.g. AUR packages)
-alias paclo='pacman -Qdt'				# [l]ist [o]rphans - list all packages which are orphaned
-alias paco='pacman -Qo'					# [o]wner - determine which package owns a given file
-alias pacqi='pacman -Qi'				# Display information about a given package in the local database
-alias pacqii='pacman -Qii'				# Display information about a given package in the local database
-alias pacql='pacman -Ql'				# List files of installed package(s)
-alias pacqs='pacman -Qs'				# Search for package(s) in the local database
-alias pacr='pacman -R'					# [r]emove - Remove the specified package(s), retaining its configuration(s) and required dependencies
-alias pacrc='pacman -Rc'				# Remove all target packages, as well as all packages that depend on one or more target packages.
-alias pacs='pacman -Ss'					# [s]earch - Search for package(s) in the repositories
-alias pacu='pacman -Syu'				# [u]pdate - Synchronize with repositories before upgrading packages that are out of date on the local system.
-alias pacuw='pacman -Syuw'				# only download upgrades
+alias pac='pacman -S'                   # default action - install one or more packages
+alias pacc='pacman -Sc'                 # [c]lean cache - delete all not currently installed package files
+alias paci='pacman -Si'                 # [i]nfo - show information about a package
+alias pacii='pacman -Sii'               # Display detailed information about a given package in the repositories
+alias pacl='pacman -Sl'                 # [l]ist - list all packages of a repository
+alias pacll='pacman -Qqm'               # [l]ist [l]ocal - list all packages which were locally installed (e.g. AUR packages)
+alias paclo='pacman -Qdt'               # [l]ist [o]rphans - list all packages which are orphaned
+alias paco='pacman -Qo'                 # [o]wner - determine which package owns a given file
+alias pacqi='pacman -Qi'                # Display information about a given package in the local database
+alias pacqii='pacman -Qii'              # Display information about a given package in the local database
+alias pacql='pacman -Ql'                # List files of installed package(s)
+alias pacqs='pacman -Qs'                # Search for package(s) in the local database
+alias pacr='pacman -R'                  # [r]emove - Remove the specified package(s), retaining its configuration(s) and required dependencies
+alias pacrc='pacman -Rc'                # Remove all target packages, as well as all packages that depend on one or more target packages.
+alias pacs='pacman -Ss'                 # [s]earch - Search for package(s) in the repositories
+alias pacu='pacman -Syu'                # [u]pdate - Synchronize with repositories before upgrading packages that are out of date on the local system.
+alias pacuw='pacman -Syuw'              # only download upgrades
 
 # SYSTEMCTL
 alias sctl='/usr/bin/systemctl'
-alias sctls='/usr/bin/systemctl status'							# systemd: display status
-alias sctldr='/usr/bin/systemctl --system daemon-reload'				# systemd: daemon reload
-alias sctl+='/usr/bin/systemctl start'							# systemd: start service
-alias sctlp='/usr/bin/systemctl start'							# systemd: start service
-alias sctl-='/usr/bin/systemctl stop'							# systemd: stop service
-alias sctlm='/usr/bin/systemctl stop'							# systemd: stop service
-alias sctlen='/usr/bin/systemctl enable'						# systemd: enable service
-alias sctldis='/usr/bin/systemctl disable'						# systemd: disable service
+alias sctls='/usr/bin/systemctl status'                         # systemd: display status
+alias sctldr='/usr/bin/systemctl --system daemon-reload'        # systemd: daemon reload
+alias sctl+='/usr/bin/systemctl start'                          # systemd: start service
+alias sctlp='/usr/bin/systemctl start'                          # systemd: start service
+alias sctl-='/usr/bin/systemctl stop'                           # systemd: stop service
+alias sctlm='/usr/bin/systemctl stop'                           # systemd: stop service
+alias sctlen='/usr/bin/systemctl enable'                        # systemd: enable service
+alias sctldis='/usr/bin/systemctl disable'                      # systemd: disable service
 
 # LS
 alias ls='ls --color=auto'  # Colored output
@@ -50,9 +50,9 @@ alias guntrackedi='git ls-files --others --exclude-standard -i'
 # OTHER
 alias cp='/usr/bin/cp --reflink=auto'
 alias diff='/usr/bin/colordiff'
-alias du1='du --max-depth=1 --total --human-readable'			# TODO
+alias du1='du --max-depth=1 --total --human-readable' # TODO
 alias grep='grep --color=auto'
-alias lgrep='ls -lA | grep'						# TODO
-alias openports='netstat --all --numeric --programs --inet --inet6'	# Show open ports
+alias lgrep='ls -lA | grep' # TODO
+alias openports='netstat --all --numeric --programs --inet --inet6' # Show open ports
 alias tmux='/usr/bin/tmux -2'
 
