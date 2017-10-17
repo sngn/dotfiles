@@ -1,0 +1,7 @@
+# clear package cache
+function clearpc() {
+  PACKAGE_CACHE=/tmp/cache/package_cache
+  find $PACKAGE_CACHE -type f | xargs rm
+}
+
+#  vim: set ts=4 sw=2 tw=0 et filetype=zsh :
