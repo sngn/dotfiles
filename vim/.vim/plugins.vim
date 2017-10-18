@@ -30,36 +30,37 @@ Plug 'Slava/vim-spacebars'               "File Manager
 Plug 'bling/vim-airline'                 "lean & mean status/tabline for vim that's light as air
 Plug 'chrisbra/vim-diff-enhanced'        "Better Diff options for Vim
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'davidhalter/jedi-vim'              "awesome Python autocompletion with VIM
+"Plug 'davidhalter/jedi-vim'              "awesome Python autocompletion with VIM
 Plug 'easymotion/vim-easymotion'
-Plug 'farseer90718/vim-taskwarrior'      "vim interface for taskwarrior 
+"Plug 'farseer90718/vim-taskwarrior'      "vim interface for taskwarrior 
 Plug 'flazz/vim-colorschemes'            "one colorscheme pack to rule them all!
 "Plug 'flowtype/vim-flow', { 'for': 'javascript' } "A vim plugin for Flow 
 Plug 'honza/vim-snippets'
-Plug 'jmcomets/vim-pony'                 "Pony power for working with Django projects
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'lambdatoast/elm.vim'               "Vim plugin for the Elm programming language
-Plug 'majutsushi/tagbar'                 "Vim plugin that displays tags in a window, ordered by scope http://majutsushi.github.com/tagbar/
+"Plug 'jmcomets/vim-pony'                 "Pony power for working with Django projects
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'lambdatoast/elm.vim'               "Vim plugin for the Elm programming language
+"Plug 'majutsushi/tagbar'                 "Vim plugin that displays tags in a window, ordered by scope http://majutsushi.github.com/tagbar/
 Plug 'michaeljsmith/vim-indent-object'   "plugin that defines a new text object representing lines of code at the same indent level
 Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'   "Indentation Guides
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'othree/jspc.vim'                   "JavaScript Parameter Complete
+"Plug 'othree/javascript-libraries-syntax.vim'
+"Plug 'othree/jspc.vim'                   "JavaScript Parameter Complete
 "Plug 'posva/vim-vue'                     "Syntax Highligth for Vue.js components
 Plug 'rafi/awesome-vim-colorschemes'     "Collection of awesome color schemes for Neo/vim, merged for quick use
 Plug 'rking/ag.vim'                      "Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
 Plug 'scrooloose/nerdcommenter'          "Vim plugin for intensely orgasmic commenting
 Plug 'scrooloose/syntastic'              "Syntastic is a syntax checking plugin
 Plug 'sukima/xmledit'                    "A filetype plugin for VIM to help edit XML files
-Plug 'svjunic/RadicalGoodSpeed.vim'      "RadicalGoodSpeed.vim is a high-contrast Vim color scheme
+"Plug 'svjunic/RadicalGoodSpeed.vim'      "RadicalGoodSpeed.vim is a high-contrast Vim color scheme
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 "Plug 'tpope/vim-fugitive'                "fugitive.vim: a Git wrapper so awesome, it should be illegal
 "Plug 'tpope/vim-git'                     "Vim Git runtime files
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'                "provides mappings to easily delete, change and add surroundings in pairs  
 "Plug 'tweekmonster/braceless.vim'        "Text objects, folding, and more for Python and other indented languages.
-Plug 'vim-scripts/taglist.vim'           "Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc)
-Plug 'vim-scripts/vimwiki'               "Personal Wiki for Vim https://github.com/vim-scripts/vimwiki
+Plug 'vim-scripts/openvpn'               "OpenVPN configuration syntax highlighter
+"Plug 'vim-scripts/taglist.vim'           "Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc)
+"Plug 'vim-scripts/vimwiki'               "Personal Wiki for Vim https://github.com/vim-scripts/vimwiki
 Plug 'xolox/vim-misc'                    "Miscellaneous auto-load Vim scripts
 Plug 'xolox/vim-session'                 "Extended session management for Vim
 
