@@ -60,6 +60,7 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } "Tern plugin for Vim
 Plug 'tpope/vim-repeat'                   "repeat.vim: enable repeating supported plugin maps with '.'
 Plug 'tpope/vim-surround'                 "provides mappings to easily delete, change and add surroundings in pairs  
 "Plug 'tweekmonster/braceless.vim'        "Text objects, folding, and more for Python and other indented languages.
+Plug 'vim-scripts/openvpn'               "OpenVPN configuration syntax highlighter
 Plug 'vim-scripts/taglist.vim'           "Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc)
 "Plug 'vim-scripts/vimwiki'               "Personal Wiki for Vim https://github.com/vim-scripts/vimwiki
 "Plug 'w0rp/ale'                           "Asynchronous Lint Engine
