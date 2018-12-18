@@ -252,6 +252,7 @@ bindsym XF86MonBrightnessDown exec "/usr/bin/xbacklight -dec  5 && notify-send -
 ## Window Management
 for_window [class="dolphin" title="^Copying"] floating enable
 for_window [class="dolphin" title="^Extracting"] floating enable
+for_window [class="Pidgin" title="Buddy List"] floating enable
 
 ## Autostart
 #exec --no-startup-id xrandr --output eDP1 --primary
@@ -276,5 +277,7 @@ exec /usr/bin/pa-applet
 
 ## NetworkManager applet
 exec --no-startup-id /usr/bin/nm-applet
+
+#exec --no-startup-id /usr/bin/redshift-gtk
 
 
