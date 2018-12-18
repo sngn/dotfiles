@@ -9,6 +9,7 @@ alias -g ....='../../..'
 alias pacman='/usr/bin/pacman --cachedir /tmp/cache/package_cache'
 alias pac='pacman -S'                   # default action - install one or more packages
 alias pacc='pacman -Sc'                 # [c]lean cache - delete all not currently installed package files
+alias paccc='rm /tmp/cache/package_cache/* --force' # [c]lean [c]ache completely
 alias paci='pacman -Si'                 # [i]nfo - show information about a package
 alias pacii='pacman -Sii'               # Display detailed information about a given package in the repositories
 alias pacl='pacman -Sl'                 # [l]ist - list all packages of a repository

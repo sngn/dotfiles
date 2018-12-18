@@ -12,7 +12,8 @@ PATH=~/npm/bin:$PATH
 PATH=~/node_modules/.bin:$PATH
 
 ### Ruby
-PATH=~/.gem/ruby/2.4.0/bin:$PATH
+#PATH=~/.gem/ruby/2.4.0/bin:$PATH
+PATH=~/.gem/ruby/2.5.0/bin:$PATH
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 
 export PATH
@@ -24,7 +25,10 @@ umask 022
 
 export EDITOR=vim
 export SYSTEMD_EDITOR=$EDITOR
-export TERM=xterm-256color
+#export TERM=xterm-256color
+export TERM=xterm-color
+
+[ "$XDG_CURRENT_DESKTOP" = "KDE" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || export QT_QPA_PLATFORMTHEME="qt5ct"
 
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 

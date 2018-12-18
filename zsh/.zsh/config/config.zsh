@@ -56,7 +56,7 @@ zplug load --verbose
 # Functions
 #-----------------------------------------------------------------------------
 fpath=( ${ZSHCONFDIR}/functions $fpath )
-autoload -Uz godmode
+autoload -Uz godmode install_zplug
 
 #-----------------------------------------------------------------------------
 # Autosuggestions
