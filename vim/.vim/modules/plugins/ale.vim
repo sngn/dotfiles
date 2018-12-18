@@ -5,7 +5,6 @@ let g:ale_linters = {
 
 let g:ale_fixers = {}
 
-"let g:ale_enabled = 0
 let g:ale_enabled = 0
 
 let g:airline#extensions#ale#enabled = 1

@@ -1,4 +1,4 @@
-" divis is the main plugin list, sourced by modules/plugins.vim
+" This is the main plugin list, sourced by modules/plugins.vim
 " Configuration goes in the appropriate modules/plugins/*.vim file.
 " So configuration for tmux.vim would go in modules/plugins/tmux.vim.vim
 
@@ -11,7 +11,7 @@
 "Plug 'skammer/vim-css-color'
 "Plug 'szw/vim-tags'                      "Ctags generator for Vim
 
-"Plug 'Glench/Vim-Jinja2-Syntax'          " An up-to-date jinja2 syntax file. https://github.com/mitsuhiko/jinja2
+"Plug 'Glench/Vim-Jinja2-Syntax'          "An up-to-date jinja2 syntax file. https://github.com/mitsuhiko/jinja2
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neco-vim'
@@ -25,10 +25,12 @@ Plug 'Shougo/unite.vim'                  "can search and display information fro
 Plug 'Shougo/vimfiler.vim'               "File Manager
 Plug 'Shougo/vimproc.vim', { 'do': 'make' } "Interactive command execution in Vim
 Plug 'Slava/vim-spacebars'               "File Manager
+Plug 'anekos/hledger-vim'                "For writing hledger journal
 Plug 'bling/vim-airline'                 "lean & mean status/tabline for vim that's light as air
+"Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'chrisbra/vim-diff-enhanced'        "Better Diff options for Vim
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'davidhalter/jedi-vim'              "awesome Python autocompletion with VIM
+"Plug 'davidhalter/jedi-vim'               "awesome Python autocompletion with VIM
 Plug 'easymotion/vim-easymotion'
 "Plug 'farseer90718/vim-taskwarrior'      "vim interface for taskwarrior 
 Plug 'flazz/vim-colorschemes'            "one colorscheme pack to rule them all!
@@ -54,18 +56,20 @@ Plug 'rafi/awesome-vim-colorschemes'     "Collection of awesome color schemes fo
 Plug 'scrooloose/nerdcommenter'          "Vim plugin for intensely orgasmic commenting
 Plug 'scrooloose/syntastic'              "Syntastic is a syntax checking plugin
 Plug 'sukima/xmledit'                    "A filetype plugin for VIM to help edit XML files
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } "Tern plugin for Vim
+"Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } "Tern plugin for Vim
 "Plug 'tpope/vim-fugitive'                "fugitive.vim: a Git wrapper so awesome, it should be illegal
 "Plug 'tpope/vim-git'                     "Vim Git runtime files
-Plug 'tpope/vim-repeat'                   "repeat.vim: enable repeating supported plugin maps with '.'
-Plug 'tpope/vim-surround'                 "provides mappings to easily delete, change and add surroundings in pairs  
+Plug 'tpope/vim-repeat'                  "repeat.vim: enable repeating supported plugin maps with '.'
+Plug 'tpope/vim-surround'                "provides mappings to easily delete, change and add surroundings in pairs  
+Plug 'tpope/vim-unimpaired'              "Pairs of handy bracket mappings
 "Plug 'tweekmonster/braceless.vim'        "Text objects, folding, and more for Python and other indented languages.
 Plug 'vim-scripts/openvpn'               "OpenVPN configuration syntax highlighter
 Plug 'vim-scripts/taglist.vim'           "Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc)
 "Plug 'vim-scripts/vimwiki'               "Personal Wiki for Vim https://github.com/vim-scripts/vimwiki
-"Plug 'w0rp/ale'                           "Asynchronous Lint Engine
-Plug 'xolox/vim-misc'                     "Miscellaneous auto-load Vim scripts
-Plug 'xolox/vim-session'                  "Extended session management for Vim
+"Plug 'w0rp/ale'                          "Asynchronous Lint Engine
+Plug 'xolox/vim-misc'                    "Miscellaneous auto-load Vim scripts
+Plug 'xolox/vim-session'                 "Extended session management for Vim
+Plug 'zchee/deoplete-jedi'
 
 " the following plugins are contained in vim-polyglot
 "Plug 'groenewege/vim-less'               "syntax highlighting, indenting and autocompletion for LESS
@@ -78,9 +82,11 @@ Plug 'sheerun/vim-polyglot'
 
 
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-  Plug 'Shougo/neocomplete.vim'            "completion framework
+  Plug 'Shougo/deoplete.nvim'            "Dark powered asynchronous completion framework for neovim/Vim8
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 Plug '~/programming/projects/vim-i3blocks-syntax'

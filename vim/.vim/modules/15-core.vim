@@ -1,5 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $VIMRUNTIME/vimrc_example.vim
+if !has('nvim')
+  source $VIMRUNTIME/vimrc_example.vim
+end
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " => General (No Category - yet) {{{1
@@ -122,8 +124,8 @@ set wildignore+=.git\*,.hg\*,.svn\*
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
 " files.
 function! AppendModeline()
-  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set filetype=%s :",
-        \ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no', &filetype)
+  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d foldmethod=%s %set filetype=%s :",
+        \ &tabstop, &shiftwidth, &textwidth, &foldmethod, &expandtab ? '' : 'no', &filetype)
   let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
   call append(line("$"), l:modeline)
 endfunction

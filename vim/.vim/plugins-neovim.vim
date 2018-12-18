@@ -1,2 +1,3 @@
+" this file is not used anymore
 
-Plug 'Shougo/deoplete.nvim'
+"Plug 'Shougo/deoplete.nvim'
