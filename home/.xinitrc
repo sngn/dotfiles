@@ -38,8 +38,6 @@ fi
 #xterm -geometry 80x20+494-0 &
 #exec xterm -geometry 80x66+0+0 -name login
 
-xkbsetup -layout de
-
 session=${1:-i3}
 
 case $session in
