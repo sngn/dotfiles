@@ -12,39 +12,40 @@ let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
 let g:tex_flavor = "latex"
 let updatetime=5000
 
-set autoread            " Set to auto read when a file is changed from the outside
+set autoread            "Set to auto read when a file is changed from the outside
 set backspace=indent,eol,start
-set binary              " Write files as they are, don't mess with line endings etc.
+set binary              "Write files as they are, don't mess with line endings etc.
 "set clipboard=unnamedplus
 set completeopt-=preview
+set diffopt+=algorithm:patience
 if !has('nvim')
     set cryptmethod=blowfish2
-    set encoding=utf8       " Set utf8 as standard encoding and en_US as the standard language
+    set encoding=utf8       "Set utf8 as standard encoding and en_US as the standard language
 end
-set ffs=unix,dos,mac    " Use Unix as the standard file type
-set hidden              " allow editing multiple unsaved buffers
-set history=1000        " Sets how many lines of history VIM has to remember
-set lazyredraw          " Don't redraw while executing macros (good performance config)
-"set list                " Enable invisible characters.
-set magic               " For regular expressions turn magic on
-"set mouse=a             " Enable the use of the mouse.
+set ffs=unix,dos,mac    "Use Unix as the standard file type
+set hidden              "allow editing multiple unsaved buffers
+set history=1000        "Sets how many lines of history VIM has to remember
+set lazyredraw          "Don't redraw while executing macros (good performance config)
+"set list                "Enable invisible characters.
+set magic               "For regular expressions turn magic on
+"set mouse=a             "Enable the use of the mouse.
 set modeline
 set modelines=5
-"set modelines=0         " no modelines [http://www.guninski.com/vim1.html]
+"set modelines=0         "no modelines [http://www.guninski.com/vim1.html]
 set noautowrite
-set nobackup            " Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup            "Turn backup off, since most stuff is in SVN, git et.c anyway...
 set noswapfile
 set nowb
 "set path=.,,/usr/include
 set sessionoptions=blank,curdir,folds,help,tabpages,winsize
 set splitbelow
 set splitright
-set timeoutlen=700      " The time in milliseconds that is waited for a key code or mapped key sequence to complete.
+set timeoutlen=700      "The time in milliseconds that is waited for a key code or mapped key sequence to complete.
 if !has('nvim')
-    set ttymouse=xterm2     " Name of the terminal type for which mouse codes are to be recognized.
+    set ttymouse=xterm2     "Name of the terminal type for which mouse codes are to be recognized.
 endif
-set viminfo^=%          " Remember info about open buffers on close
-syntax on               " Enable syntax highlighting
+set viminfo^=%          "Remember info about open buffers on close
+syntax on               "Enable syntax highlighting
 
 " Specify the behavior when switching between buffers
 try

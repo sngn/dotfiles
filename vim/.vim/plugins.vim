@@ -12,24 +12,28 @@
 "Plug 'szw/vim-tags'                      "Ctags generator for Vim
 
 "Plug 'Glench/Vim-Jinja2-Syntax'          "An up-to-date jinja2 syntax file. https://github.com/mitsuhiko/jinja2
-Plug 'Shougo/context_filetype.vim'
-Plug 'Shougo/neco-syntax'
-Plug 'Shougo/neco-vim'
-Plug 'Shougo/neoinclude.vim'
-Plug 'Shougo/neopairs.vim'
+Plug 'Shougo/context_filetype.vim'        "Context filetype library for Vim script
+Plug 'Shougo/denite.nvim'                 "Dark powered asynchronous unite all interfaces for Neovim/Vim8
+Plug 'Shougo/neco-syntax'                 "Syntax source for neocomplete/deoplete/ncm
+Plug 'Shougo/neco-vim'                    "The vim source for neocomplete/deoplete
+Plug 'Shougo/neoinclude.vim'              "Include completion framework for neocomplete/deoplete 
+"Plug 'Shougo/neopairs.vim'                "Auto insert pairs when complete done 
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neosnippet.vim'             "adds snippet support
 Plug 'Shougo/neossh.vim'                 "SSH interface for Vim plugins
-Plug 'Shougo/unite-session'
-Plug 'Shougo/unite.vim'                  "can search and display information from arbitrary sources like files, buffers, recently used files or registers
-Plug 'Shougo/vimfiler.vim'               "File Manager
+"Plug 'Shougo/unite-session'
+"Plug 'Shougo/vimfiler.vim'               "File Manager
 Plug 'Shougo/vimproc.vim', { 'do': 'make' } "Interactive command execution in Vim
-Plug 'Slava/vim-spacebars'               "File Manager
+"Plug 'Slava/vim-spacebars'               "spacebars, mustache and handlebars mode for vim http://mustache.github.io
+Plug 'alvan/vim-closetag'                "Auto close (X)HTML tags 
 Plug 'anekos/hledger-vim'                "For writing hledger journal
+Plug 'autozimu/LanguageClient-neovim', {  
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }                                  "Language Server Protocol (LSP) support for vim and neovim
 Plug 'bling/vim-airline'                 "lean & mean status/tabline for vim that's light as air
 "Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'chrisbra/vim-diff-enhanced'        "Better Diff options for Vim
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'                 "Fuzzy file, buffer, mru, tag, etc finder. http://ctrlpvim.github.com/ctrlp.vim
 "Plug 'davidhalter/jedi-vim'               "awesome Python autocompletion with VIM
 Plug 'easymotion/vim-easymotion'
 "Plug 'farseer90718/vim-taskwarrior'      "vim interface for taskwarrior 
@@ -41,11 +45,12 @@ Plug 'jmcomets/vim-pony'                 "Pony power for working with Django pro
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 "Plug '~/.fzf', { 'do': './install --bin --no-update-rc' } "junegunn/fzf already cloned to ~/.fzf
 "Plug '~/.fzf', { 'do': './install --bin --no-update-rc --64' } "junegunn/fzf already cloned to ~/.fzf
-"Plug 'junegunn/fzf.vim'                  "fzf ❤️ vim
+Plug 'junegunn/fzf.vim'                  "fzf ❤️ vim
+Plug 'ledger/vim-ledger'                 "Vim plugin for Ledger
 Plug 'lervag/vimtex'                     "A modern vim plugin for editing LaTeX files
 Plug 'majutsushi/tagbar'                 "Vim plugin that displays tags in a window, ordered by scope http://majutsushi.github.com/tagbar/
 Plug 'michaeljsmith/vim-indent-object'   "plugin that defines a new text object representing lines of code at the same indent level
-Plug 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'                   "Vim plugin for the Perl module / CLI script 'ack'
 Plug 'nathanaelkane/vim-indent-guides'   "Indentation Guides
 Plug 'othree/javascript-libraries-syntax.vim' "Syntax for JavaScript libraries
 Plug 'othree/jspc.vim'                   "JavaScript Parameter Complete
@@ -57,11 +62,12 @@ Plug 'scrooloose/nerdcommenter'          "Vim plugin for intensely orgasmic comm
 Plug 'scrooloose/syntastic'              "Syntastic is a syntax checking plugin
 Plug 'sukima/xmledit'                    "A filetype plugin for VIM to help edit XML files
 "Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } "Tern plugin for Vim
-"Plug 'tpope/vim-fugitive'                "fugitive.vim: a Git wrapper so awesome, it should be illegal
+Plug 'tpope/vim-fugitive'                "fugitive.vim: a Git wrapper so awesome, it should be illegal
 "Plug 'tpope/vim-git'                     "Vim Git runtime files
 Plug 'tpope/vim-repeat'                  "repeat.vim: enable repeating supported plugin maps with '.'
 Plug 'tpope/vim-surround'                "provides mappings to easily delete, change and add surroundings in pairs  
 Plug 'tpope/vim-unimpaired'              "Pairs of handy bracket mappings
+Plug 'tpope/vim-vinegar'                 "Combine with netrw to create a delicious salad dressing
 "Plug 'tweekmonster/braceless.vim'        "Text objects, folding, and more for Python and other indented languages.
 Plug 'vim-scripts/openvpn'               "OpenVPN configuration syntax highlighter
 Plug 'vim-scripts/taglist.vim'           "Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc)
