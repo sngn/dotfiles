@@ -8,7 +8,10 @@ end
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin indent on
 
-let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
+if &diff
+  "let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
+endif
+
 let g:tex_flavor = "latex"
 let updatetime=5000
 
