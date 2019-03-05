@@ -2,7 +2,16 @@ echo ".profile"
 #-----------------------------------------------------------------------------
 # PATH variable
 #-----------------------------------------------------------------------------
-PATH=$HOME/bin:$PATH
+
+### guix
+#GUIX_PROFILE="$HOME/.guix-profile"
+export GUIX_PROFILE="$HOME/.guix-profile"
+source "$GUIX_PROFILE/etc/profile"
+PATH="/home/max/.config/guix/current/bin${PATH:+:}$PATH"
+PATH="$GUIX_PROFILE/bin${PATH:+:}$PATH"
+export GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
+export XDG_DATA_DIRS="$GUIX_PROFILE/share${XDG_DATA_DIRS:+:}$XDG_DATA_DIRS"
+export GIO_EXTRA_MODULES="$GUIX_PROFILE/lib/gio/modules${GIO_EXTRA_MODULES:+:}$GIO_EXTRA_MODULES"
 
 ### Node.js
 # "Global" for $USER
@@ -15,6 +24,8 @@ PATH=~/node_modules/.bin:$PATH
 #PATH=~/.gem/ruby/2.4.0/bin:$PATH
 PATH=~/.gem/ruby/2.5.0/bin:$PATH
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+
+PATH=$HOME/bin:$PATH
 
 export PATH
 

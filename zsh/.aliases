@@ -48,6 +48,11 @@ alias llt='ls -lthr'        # List contents of directory using long format - sor
 alias guntracked='git ls-files --others --exclude-standard'
 alias guntrackedi='git ls-files --others --exclude-standard -i'
 
+# GUIX
+alias gxi='guix package -i'
+alias gxI='guix package -I'
+alias gxs='guix package -s'
+
 # OTHER
 alias cp='/usr/bin/cp --reflink=auto'
 alias diff='/usr/bin/colordiff'
