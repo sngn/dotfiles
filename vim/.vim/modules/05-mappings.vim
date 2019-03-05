@@ -28,7 +28,8 @@ nnoremap 00 ^
 
 nmap gr :tabprev<CR>
 
-" Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
+" only works with 8th bit input terminal (ie xterm)
+" Move a line of text using ALT+[jk] or Command+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
@@ -41,16 +42,20 @@ inoremap jk <esc>
 nnoremap <silent> <leader>+ :vertical resize +5<cr>
 nnoremap <silent> <leader>- :vertical resize -5<cr>
 
-" File searching
-"nnoremap <C-p> :Unite file_rec/async<cr>
-"nnoremap <C-p> :CtrlP<cr>
-nnoremap <C-p> :CtrlPBuffer<cr>
-" this should be in ctrlp config file
-let g:ctrlp_match_window = 'top,order:ttb'
-nnoremap <leader>fx :VimFiler<cr>
+" File Manager
+let g:netrw_banner = 0
+"let g:netrw_browse_split = 4
+"let g:netrw_liststyle = 3
+"nnoremap <leader>fx :Explore<cr>
+nnoremap <leader>hx :Hexplore<cr>
+nnoremap <leader>rx :Rexplore<cr>
+nnoremap <leader>sx :Sexplore<cr>
+nnoremap <leader>vx :Vexplore<cr>
+nnoremap <leader>x :Explore<cr>
+
 " open .vimrc file
-":nnoremap <leader>ev :vsplit ~/.vimrc<cr>
-:nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+":nnoremap <leader>ev :vsplit $HOME/dotfiles/vim/.vim/plugins.vim<cr>
+:nnoremap <leader>ev :vsplit ~/dotfiles/vim/.vim/plugins.vim<cr>
 :nnoremap <leader>EV :vsplit /etc/vimrc<cr>
 " source .vimrc file
 :nnoremap <leader>sv :source $MYVIMRC<cr>
@@ -59,25 +64,6 @@ nnoremap <leader>fx :VimFiler<cr>
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
-
-" Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
-vnoremap <silent> * :call VisualSelection('f', '')<CR>
-vnoremap <silent> # :call VisualSelection('b', '')<CR>
-
-" Clears the search.
-function! s:clear_search_results()
-  let @/ = ""
-endfunction
-
-nnoremap <silent> <leader>/d :call <SID>clear_search_results()<CR>
-
-" Shows the amount of matches for the previous search.
-function! s:count_search_results()
-  %s///gn
-endfunction
-
-nnoremap <silent> <leader>/c :call <SID>count_search_results()<CR>
 
 " Trim the trailing white space from the file.
 function! s:trim_trailing_whitespace()
@@ -93,10 +79,27 @@ nnoremap <silent> <leader>wf :tab sp<CR>
 nnoremap <silent> <leader>gl :diffget LOCAL<CR>
 nnoremap <silent> <leader>gr :diffget REMOTE<CR>
 
+"function! TabMessage(cmd)
+function! VSplitMessage(cmd)
+  redir => message
+  silent execute a:cmd
+  redir END
+  if empty(message)
+    echoerr "no output"
+  else
+    " use "new" instead of "tabnew" below if you prefer split windows instead of tabs
+    "tabnew
+    vnew
+    setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
+    silent put=message
+  endif
+endfunction
+command! -nargs=+ -complete=command VSplitMessage call VSplitMessage(<q-args>)
+
 " Print out the current mappings.
 function! s:show_mappings()
-  let path = Dot('mappings.sh')
-  exec '!' . path
+  ":VSplitMessage verbose map 
+  :VSplitMessage map 
 endfunction
 
 nnoremap <silent> <leader><leader> :call <SID>show_mappings()<CR>
@@ -106,7 +109,8 @@ map j gj
 map k gk
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-map <space> /
+"map <space> /
+noremap <space> /
 "map <c-space> ?
 
 " Smart way to move between windows

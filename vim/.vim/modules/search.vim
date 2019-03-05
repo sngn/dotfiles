@@ -13,3 +13,23 @@ set hlsearch 			" When there is a previous search pattern, highlight all
                         " its matches.
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
+
+" Visual mode pressing * or # searches for the current selection
+" Super useful! From an idea by Michael Naumann
+"vnoremap <silent> * :call VisualSelection('f', '')<CR>
+"vnoremap <silent> # :call VisualSelection('b', '')<CR>
+
+" Clears the search.
+function! s:clear_search_results()
+  let @/ = ""
+endfunction
+
+nnoremap <silent> <leader>/d :call <SID>clear_search_results()<CR>
+
+" Shows the amount of matches for the previous search.
+function! s:count_search_results()
+  %s///gn
+endfunction
+
+nnoremap <silent> <leader>/c :call <SID>count_search_results()<CR>
+
