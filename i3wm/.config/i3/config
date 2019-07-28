@@ -246,8 +246,8 @@ bindsym XF86AudioMute exec /usr/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 #bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -inc 10
 #bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 5
-bindsym XF86MonBrightnessUp   exec "/usr/bin/xbacklight -inc 10 && notify-send -u low -t 1 \\"Brightness\\" \\"$(xbacklight -get)%\\""
-bindsym XF86MonBrightnessDown exec "/usr/bin/xbacklight -dec  5 && notify-send -u low -t 1 \\"Brightness\\" \\"$(xbacklight -get)%\\""
+bindsym XF86MonBrightnessUp   exec "/usr/bin/xbacklight -inc 10 && notify-send -u low -t 1000 \\"Brightness\\" \\"$(xbacklight -get)%\\""
+bindsym XF86MonBrightnessDown exec "/usr/bin/xbacklight -dec  5 && notify-send -u low -t 1000 \\"Brightness\\" \\"$(xbacklight -get)%\\""
 
 ## Window Management
 for_window [class="dolphin" title="^Copying"] floating enable
