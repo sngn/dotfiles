@@ -60,5 +60,5 @@ alias du1='du --max-depth=1 --total --human-readable' # TODO
 alias grep='grep --color=auto'
 alias lgrep='ls -lA | grep' # TODO
 alias openports='netstat --all --numeric --programs --inet --inet6' # Show open ports
-alias tmux='/usr/bin/tmux -2'
+alias tmux=`whence tmux`" -2"
 

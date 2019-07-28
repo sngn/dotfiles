@@ -1,15 +1,17 @@
 function godmode() {
 ### make user root and start a terminal multiplexer
-	TERMINAL_MULTIPLEXER=/usr/bin/tmux
-#	TERMINAL_MULTIPLEXER=/usr/bin/screen
+	TERMINAL_MULTIPLEXER=`whence tmux`
+    #echo $TERMINAL_MULTIPLEXER
+
+    INIT_COMMAND="cd /etc; $TERMINAL_MULTIPLEXER"
+    #echo $INIT_COMMAND
 
 	case $USER in
 		(root)
-			cd /etc
-			$TERMINAL_MULTIPLEXER
+            $INIT_COMMAND
 			;;
 		(*)
-			/usr/bin/su --login --shell=$SHELL --command="cd /etc; $TERMINAL_MULTIPLEXER";
+            /usr/bin/su --login --shell=$SHELL --command="$INIT_COMMAND";
 			;;
 	esac
 }
