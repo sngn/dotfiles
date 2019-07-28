@@ -1,0 +1,34 @@
+{
+  //"coc.preferences.colorSupport": false, 
+  //"coc.preferences.hoverTarget": "float", 
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  //"eslint.enable": false,
+  "javascript.preferences.quoteStyle": "double",
+  "javascript.showUnused": false,
+  //"json.enable": false,
+  //"highlight.colors.enable": false,
+  //"highlight.disableLanguages": [],
+  //"highlight.document.enable": false,
+  "list.source.grep.args": ["--hidden"],
+  //"list.source.grep.command": "rg",
+  //"list.source.grep.command": "ag",
+  "list.source.grep.excludePatterns": [],
+  //"list.source.grep.useLiteral": false,
+  "lists.disabledLists": [],
+  "session.saveOnVimLeave": false,
+  "snippets.extends": {
+    "cpp": ["c"],
+    "typescript": ["javascript"]
+  },
+  // Enable floating window for documentation when possible
+  //"suggest.floatEnable": false,
+  // To make the completion automatically select the first completed item
+  //"suggest.noselect": false,
+  //"tsserver.enable": false,
+  //"tsserver.enableJavascript": false,
+  "tsserver.npm": "/usr/bin/npm",
+  "typescript.preferences.quoteStyle": "double",
+  "typescript.showUnused": false,
+  //"vetur.enable": false,
+  "vetur.experimental.templateInterpolationService": false
+}

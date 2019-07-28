@@ -10,40 +10,35 @@ filetype plugin indent on
 
 "let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
 let g:tex_flavor = "latex"
-let updatetime=5000
+"let updatetime=4000
+let updatetime=300
 
-set autoread            "Set to auto read when a file is changed from the outside
+" Python providers -- for virtual environments
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python3'
+" Node provider
+let g:node_host_prog = '~/node_modules/.bin/neovim-node-host'
+
 set backspace=indent,eol,start
 set binary              "Write files as they are, don't mess with line endings etc.
 "set clipboard=unnamedplus
 set completeopt-=preview
 set diffopt+=algorithm:patience
-if !has('nvim')
-    set cryptmethod=blowfish2
-    set encoding=utf8       "Set utf8 as standard encoding and en_US as the standard language
-end
-set ffs=unix,dos,mac    "Use Unix as the standard file type
-set hidden              "allow editing multiple unsaved buffers
-set history=1000        "Sets how many lines of history VIM has to remember
+set fileformats=unix,dos,mac  "Use Unix as the standard file type
 set lazyredraw          "Don't redraw while executing macros (good performance config)
 "set list                "Enable invisible characters.
 set magic               "For regular expressions turn magic on
-"set mouse=a             "Enable the use of the mouse.
+if has('nvim')
+  set mouse=a             "Enable the use of the mouse.
+end
 set modeline
 set modelines=5
 "set modelines=0         "no modelines [http://www.guninski.com/vim1.html]
-set noautowrite
-set nobackup            "Turn backup off, since most stuff is in SVN, git et.c anyway...
-set noswapfile
-set nowb
 "set path=.,,/usr/include
 set sessionoptions=blank,curdir,folds,help,tabpages,winsize
 set splitbelow
 set splitright
 set timeoutlen=700      "The time in milliseconds that is waited for a key code or mapped key sequence to complete.
-if !has('nvim')
-    set ttymouse=xterm2     "Name of the terminal type for which mouse codes are to be recognized.
-endif
 set viminfo^=%          "Remember info about open buffers on close
 syntax on               "Enable syntax highlighting
 
@@ -57,6 +52,46 @@ try
                         "    2: always
 catch
 endtry
+
+if !has('nvim') " Vim specific
+    set cryptmethod=blowfish2
+    set encoding=utf8          "Set utf8 as standard encoding and en_US as the standard language
+    set ttymouse=xterm2        "Name of the terminal type for which mouse codes are to be recognized.
+end
+
+" => Backups and undo {{{1
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set autoread            "Set to auto read when a file is changed from the outside
+set noautowrite
+set hidden              "allow editing multiple unsaved buffers
+set history=2500        "Sets how many lines of history VIM has to remember
+
+" Protect changes between writes. Default values of
+" updatecount (200 keystrokes) and updatetime
+" (4 seconds) are fine
+"set swapfile
+"set directory^=~/.vim/swap//
+set noswapfile
+
+" protect against crash-during-write
+"set writebackup
+set nowritebackup
+" but do not persist backup after successful write
+set nobackup
+" use rename-and-write-new method whenever safe
+set backupcopy=auto
+" patch required to honor double slash at end
+if has("patch-8.1.0251")
+	" consolidate the writebackups -- not a big
+	" deal either way, since they usually get deleted
+	set backupdir^=~/.vim/backup//
+end
+
+" persist the undo tree for each file
+set undofile
+set undodir^=~/.vim/undo//
+set undolevels=1000	 	" Maximum number of changes that can be undone.
+set undoreload=10000
 
 " => User Interface {{{1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
