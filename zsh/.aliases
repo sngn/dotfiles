@@ -47,6 +47,7 @@ alias llt='ls -lthr'        # List contents of directory using long format - sor
 # GIT
 alias guntracked='git ls-files --others --exclude-standard'
 alias guntrackedi='git ls-files --others --exclude-standard -i'
+alias gcomain='git checkout Product/Main'
 
 # GUIX
 alias gxi='guix package -i'

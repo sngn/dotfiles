@@ -4,5 +4,6 @@ let g:session_autosave = 'no'
 let g:session_autosave_periodic = 10
 
 if has('nvim')
-  let g:session_directory = '~/.config/nvim/nsessions'
+  "let g:session_directory = '~/.config/nvim/nsessions'
+  let g:session_directory = '~/.vim/sessions/nvim'
 endif

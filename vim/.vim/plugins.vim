@@ -96,6 +96,5 @@ Plug 'sheerun/vim-polyglot'
   "Plug 'roxma/vim-hug-neovim-rpc'
 "endif
 
-
 Plug '~/programming/projects/vim-i3blocks-syntax'
 

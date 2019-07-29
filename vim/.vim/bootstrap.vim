@@ -11,11 +11,12 @@ function! NDot(path)
 endfunction
 
 " Load all configuration modules.
-if has('nvim')
-  let mods = glob(NDot('modules/*.vim'), 0, 1)
-else
-  let mods = glob(Dot('modules/*.vim'), 0, 1)
-endif
+let mods = glob(Dot('modules/*.vim'), 0, 1)
+"if has('nvim')
+  "let mods = glob(NDot('modules/*.vim'), 0, 1)
+"else
+  "let mods = glob(Dot('modules/*.vim'), 0, 1)
+"endif
 "for file in split(glob(Dot('modules/*.vim')), '\n')
 "for file in sort(glob(Dot('modules/*.vim'), 0, 1), 'n')
 for file in sort(mods, 'n')
