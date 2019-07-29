@@ -7,9 +7,11 @@ echo ".zshenv"
 if [[ -o interactive ]]; then
 
   ### envoy 
-  eval $(envoy -p)
+  #eval $(envoy -p)
   ### keychain
-  # eval $(keychain --eval --quiet )
+  #eval $(keychain --eval --quiet id_rsa)
+  #eval $(keychain --eval --quiet id_ecdsa)
+  eval $(keychain --eval --quiet id_rsa id_ecdsa)
 
 fi
 

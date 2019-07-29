@@ -4,8 +4,10 @@ if [[ -o interactive ]]; then
   #echo "*** interactive ***"
 
   ### smartcd
-  [ -r "$HOME/.smartcd_config" ] && ( [ -n $BASH_VERSION ] || [ -n $ZSH_VERSION ] ) && source ~/.smartcd_config
-  export ENHANCD_COMMAND="smartcd cd"
+  #[ -r "$HOME/.smartcd_config" ] && ( [ -n $BASH_VERSION ] || [ -n $ZSH_VERSION ] ) && source ~/.smartcd_config
+  [ -r "$HOME/.smartcd_config" ] && ( [ -n $BASH_VERSION ] || [ -n $ZSH_VERSION ] ) && source ~/.smartcd_config && alias scd='smartcd cd'
+  #export ENHANCD_COMMAND="smartcd cd"
+  export ENHANCD_COMMAND="scd"
   export ENHANCD_DISABLE_DOT=1
 
   ### z
