@@ -9,5 +9,4 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers=['standard']
 " disable syntastic for scss because of unfound import paths
 let g:syntastic_scss_checkers=['']
-let g:syntastic_vue_checkers=['']
 
