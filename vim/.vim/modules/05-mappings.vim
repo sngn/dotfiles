@@ -1,7 +1,8 @@
 "" => Langmap {{{1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "set langmap=ü[,+]
-set langmap=ü[    " can't map '+' because then cannot use register
+" can't map '+' because then cannot use register
+set langmap=ü[
 
 "" => Mapleader {{{1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
