@@ -1,7 +1,8 @@
 {
   //"coc.preferences.colorSupport": false, 
-  //"coc.preferences.hoverTarget": "float", 
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  //"coc.preferences.hoverTarget": "float", 
+  "coc.preferences.jumpCommand": "drop",
   //"eslint.enable": false,
   "javascript.preferences.quoteStyle": "double",
   "javascript.showUnused": false,

@@ -10,6 +10,8 @@ if [[ -o interactive ]]; then
   #eval $(envoy -p)
   ### keychain
   eval $(keychain --eval --quiet id_rsa)
+  #eval $(keychain --eval --quiet id_ecdsa)
+  #eval $(keychain --eval --quiet id_rsa id_ecdsa)
 
 fi
 
