@@ -1,29 +1,25 @@
+"" => Langmap {{{1
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set langmap=ü[,+]
+
 "" => Mapleader {{{1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
+"let mapleader        = ";"
+"let g:mapleader      = ";"
 let mapleader        = "ö"
 let g:mapleader      = "ö"
-let maplocalleader   = "Ö"
-let g:maplocalleader = "Ö"
+"let maplocalleader   = ":"
+"let g:maplocalleader = ":"
+"let maplocalleader   = "Ö"
+"let g:maplocalleader = "Ö"
+let maplocalleader   = "ä"
+let g:maplocalleader = "ä"
 
 " => Key Mappings {{{1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mappings for DE keyboard layout
-" nnoremap ö ; als leader bzw.
-" nnoremap Ö : als localleader gemappt. siehe oben.
-"map ä ]
-"map Ä }
-"map ü [
-"map Ü {
-"imap ä ]
-"imap Ä }
-"imap ü [
-"imap Ü {
-
 " Remap VIM 0 to first non-blank character
-"noremap 00 0
-"map 0 ^
 nnoremap 00 ^
 
 nmap gr :tabprev<CR>
@@ -79,8 +75,7 @@ nnoremap <silent> <leader>wf :tab sp<CR>
 nnoremap <silent> <leader>gl :diffget LOCAL<CR>
 nnoremap <silent> <leader>gr :diffget REMOTE<CR>
 
-"function! TabMessage(cmd)
-function! VSplitMessage(cmd)
+function! TabMessage(cmd)
   redir => message
   silent execute a:cmd
   redir END
@@ -88,7 +83,20 @@ function! VSplitMessage(cmd)
     echoerr "no output"
   else
     " use "new" instead of "tabnew" below if you prefer split windows instead of tabs
-    "tabnew
+    tabnew
+    setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
+    silent put=message
+  endif
+endfunction
+command! -nargs=+ -complete=command VSplitMessage call VSplitMessage(<q-args>)
+
+function! VSplitMessage(cmd)
+  redir => message
+  silent execute a:cmd
+  redir END
+  if empty(message)
+    echoerr "no output"
+  else
     vnew
     setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
     silent put=message

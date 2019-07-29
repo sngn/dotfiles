@@ -1,9 +1,16 @@
+finish
+
 "if has('nvim')
 """""
 
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
+"let g:deoplete#enable_at_startup = 1
 
 call deoplete#custom#option('smart_case', v:true)
+
+"call deoplete#custom#option('sources', {
+"\ '_': ['ale'],
+"\})
 
 set completeopt+=noinsert
 

@@ -48,6 +48,11 @@ alias llt='ls -lthr'        # List contents of directory using long format - sor
 alias guntracked='git ls-files --others --exclude-standard'
 alias guntrackedi='git ls-files --others --exclude-standard -i'
 
+# GUIX
+alias gxi='guix package -i'
+alias gxI='guix package -I'
+alias gxs='guix package -s'
+
 # OTHER
 alias cp='/usr/bin/cp --reflink=auto'
 alias diff='/usr/bin/colordiff'
@@ -55,5 +60,5 @@ alias du1='du --max-depth=1 --total --human-readable' # TODO
 alias grep='grep --color=auto'
 alias lgrep='ls -lA | grep' # TODO
 alias openports='netstat --all --numeric --programs --inet --inet6' # Show open ports
-alias tmux='/usr/bin/tmux -2'
+alias tmux=`whence tmux`" -2"
 
