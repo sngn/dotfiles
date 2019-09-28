@@ -40,7 +40,7 @@ nmap <leader>rn <Plug>(coc-rename)
 "nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap for do codeAction of current line
-nmap <leader>ac  <Plug>(coc-codeaction)
+"nmap <leader>ac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
@@ -157,12 +157,20 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 nnoremap <c-p> :CocList buffers<CR>
 
 """ make grep easier
-"command! -nargs=+ -complete=custom,s:GrepArgs Rg exe 'CocList grep '.<q-args>
+command! -nargs=+ -complete=custom,s:GrepArgs Rg exe 'CocList grep '.<q-args>
 command! -nargs=+ -complete=custom,s:AgArgs Ag exe 'CocList grep '.<q-args>
 
 function! s:GrepArgs(...)
-  let list = ['-S', '-smartcase', '-i', '-ignorecase', '-w', '-word',
-        \ '-e', '-regex', '-u', '-skip-vcs-ignores', '-t', '-extension']
+  let list = [
+        \ '-S', '-smartcase', 
+        \ '-i', '-ignorecase', 
+        \ '-l', '-literal', 
+        \ '-w', '-word',
+        \ '-e', '-regex', 
+        \ '-u', '-skip-vcs-ignores', 
+        \ '-t', '-extension'],
+        \ '-F', '-folder'],
+        \ '-W', '-workspace']
   return join(list, "\n")
 endfunction
 

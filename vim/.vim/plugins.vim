@@ -2,6 +2,11 @@
 " Configuration goes in the appropriate modules/plugins/*.vim file.
 " So configuration for tmux.vim would go in modules/plugins/tmux.vim.vim
 
+" loads matchit plugin (included in vim distribution)
+if !has('nvim') 
+  packadd! matchit
+endif
+
 "Plug 'Shougo/unite-outline'
 "Plug 'Shutnik/jshint2.vim'               "Lightweight, customizable and functional Vim plugin for JSHint integration
 "Plug 'grassdog/tagman.vim'               "Vim plugin for managing ctags files
@@ -50,7 +55,7 @@ Plug 'ledger/vim-ledger'                 "Vim plugin for Ledger
 Plug 'lervag/vimtex'                     "A modern vim plugin for editing LaTeX files
 Plug 'majutsushi/tagbar'                 "Vim plugin that displays tags in a window, ordered by scope http://majutsushi.github.com/tagbar/
 Plug 'michaeljsmith/vim-indent-object'   "plugin that defines a new text object representing lines of code at the same indent level
-"Plug 'mileszs/ack.vim'                   "Vim plugin for the Perl module / CLI script 'ack'
+Plug 'mileszs/ack.vim'                   "Vim plugin for the Perl module / CLI script 'ack'
 Plug 'nathanaelkane/vim-indent-guides'   "Indentation Guides
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'othree/javascript-libraries-syntax.vim' "Syntax for JavaScript libraries
@@ -59,6 +64,7 @@ Plug 'othree/javascript-libraries-syntax.vim' "Syntax for JavaScript libraries
 "Plug 'othree/yajs.vim'                   "YAJS.vim: Yet Another JavaScript Syntax for Vim 
 Plug 'rafi/awesome-vim-colorschemes'     "Collection of awesome color schemes for Neo/vim, merged for quick use
 "Plug 'rking/ag.vim'                      "Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
+Plug 'severin-lemaignan/vim-minimap'     "A Sublime-like minimap for VIM, based on the Drawille console-based drawing library
 Plug 'scrooloose/nerdcommenter'          "Vim plugin for intensely orgasmic commenting
 "Plug 'scrooloose/syntastic'              "Syntastic is a syntax checking plugin
 "Plug 'sukima/xmledit'                    "A filetype plugin for VIM to help edit XML files
@@ -74,6 +80,7 @@ Plug 'vim-scripts/openvpn'               "OpenVPN configuration syntax highlight
 Plug 'vim-scripts/taglist.vim'           "Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc)
 "Plug 'vim-scripts/vimwiki'               "Personal Wiki for Vim https://github.com/vim-scripts/vimwiki
 "Plug 'w0rp/ale'                          "Asynchronous Lint Engine
+"Plug 'wincent/ferret'                    "Enhanced multi-file search for Vim
 Plug 'xolox/vim-misc'                    "Miscellaneous auto-load Vim scripts
 Plug 'xolox/vim-session'                 "Extended session management for Vim
 "Plug 'zchee/deoplete-jedi'
