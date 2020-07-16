@@ -24,12 +24,13 @@ set binary              "Write files as they are, don't mess with line endings e
 "set clipboard=unnamedplus
 set completeopt-=preview
 set diffopt+=algorithm:patience
+set exrc                "enable external configuration; also put 'set secure' at end of vimrc
 set fileformats=unix,dos,mac  "Use Unix as the standard file type
 set lazyredraw          "Don't redraw while executing macros (good performance config)
 "set list                "Enable invisible characters.
 set magic               "For regular expressions turn magic on
 if has('nvim')
-  set mouse=a             "Enable the use of the mouse.
+  set mouse=a           "Enable the use of the mouse.
 end
 set modeline
 set modelines=5

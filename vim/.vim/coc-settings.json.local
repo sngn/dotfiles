@@ -1,0 +1,13 @@
+{
+  //"json.enable": false,
+  "eslint.enable": false,
+  //"suggest.enable": false,
+  //"suggest.floatEnable": false,
+  "javascript.preferences.quoteStyle": "double",
+  "javascript.showUnused": false,
+  "typescript.preferences.quoteStyle": "double",
+  "typescript.showUnused": false,
+  //"tsserver.enable": false,
+  //"tsserver.enableJavascript": false,
+  //"tsserver.formatOnType": false
+}

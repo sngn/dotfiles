@@ -3,7 +3,13 @@
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
   //"coc.preferences.hoverTarget": "float", 
   "coc.preferences.jumpCommand": "drop",
+  "diagnostic.messageTarget": "echo",
   //"eslint.enable": false,
+  //"eslint.options": {
+    //"configFile": "../../../Portal/Application/FrontEnd/.eslintrc.js"
+    //"configFile": "/home/max/.eslintrc.js"
+  //},
+  "eslint.autoFixOnSave": true,
   "javascript.preferences.quoteStyle": "double",
   "javascript.showUnused": false,
   //"json.enable": false,
@@ -17,6 +23,7 @@
   //"list.source.grep.useLiteral": false,
   "lists.disabledLists": [],
   "session.saveOnVimLeave": false,
+  "signature.target": "echo",
   "snippets.extends": {
     "cpp": ["c"],
     "typescript": ["javascript"]
@@ -31,5 +38,5 @@
   "typescript.preferences.quoteStyle": "double",
   "typescript.showUnused": false,
   //"vetur.enable": false,
-  "vetur.experimental.templateInterpolationService": false
+  //"vetur.experimental.templateInterpolationService": false
 }

@@ -22,3 +22,4 @@ let mods = glob(Dot('modules/*.vim'), 0, 1)
 for file in sort(mods, 'n')
   execute 'source' file
 endfor
+

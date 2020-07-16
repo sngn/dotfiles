@@ -1,0 +1,13 @@
+let g:coc_global_extensions = [
+\  'coc-css',
+\  'coc-eslint',
+\  'coc-html',
+\  'coc-json',
+\  'coc-neosnippet',
+\  'coc-prettier',
+\  'coc-syntax',
+\  'coc-tsserver',
+\  'coc-vetur',
+\]
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile

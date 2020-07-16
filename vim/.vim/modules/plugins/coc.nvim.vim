@@ -5,9 +5,9 @@ let g:coc_global_extensions = [
 \  'coc-html',
 \  'coc-json',
 \  'coc-lists',
-\  'coc-omnisharp',
 \  'coc-prettier',
 \  'coc-snippets',
+\  'coc-svelte',
 \  'coc-syntax',
 \  'coc-tsserver',
 \  'coc-vetur',
@@ -18,6 +18,7 @@ let g:coc_global_extensions = [
 "let g:coc_global_extensions = [
 "\  'coc-git',
 "\  'coc-neosnippet',
+"\  'coc-omnisharp',
 "\  'coc-python',
 "\  'coc-svg',
 ""\  'coc-xml', "needs JDK? does not find it

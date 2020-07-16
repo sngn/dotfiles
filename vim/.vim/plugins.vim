@@ -48,9 +48,9 @@ Plug 'jmcomets/vim-pony'                 "Pony power for working with Django pro
 "Plug 'junegunn/fzf.vim'                  "fzf ❤️ vim
 Plug 'ledger/vim-ledger'                 "Vim plugin for Ledger
 Plug 'lervag/vimtex'                     "A modern vim plugin for editing LaTeX files
-Plug 'majutsushi/tagbar'                 "Vim plugin that displays tags in a window, ordered by scope http://majutsushi.github.com/tagbar/
+"Plug 'majutsushi/tagbar'                 "Vim plugin that displays tags in a window, ordered by scope http://majutsushi.github.com/tagbar/
 Plug 'michaeljsmith/vim-indent-object'   "plugin that defines a new text object representing lines of code at the same indent level
-"Plug 'mileszs/ack.vim'                   "Vim plugin for the Perl module / CLI script 'ack'
+Plug 'mileszs/ack.vim'                   "Vim plugin for the Perl module / CLI script 'ack'
 Plug 'nathanaelkane/vim-indent-guides'   "Indentation Guides
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'othree/javascript-libraries-syntax.vim' "Syntax for JavaScript libraries
