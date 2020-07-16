@@ -3,23 +3,28 @@
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
   //"coc.preferences.hoverTarget": "float", 
   "coc.preferences.jumpCommand": "drop",
+  "diagnostic.messageTarget": "echo",
   //"eslint.enable": false,
   "eslint.options": {
-    "configFile": "/home/max/.eslintrc.js"
+    //"configFile": "/home/max/.eslintrc.js"
   },
+  "eslint.autoFixOnSave": true,
   "javascript.preferences.quoteStyle": "double",
   "javascript.showUnused": false,
   //"json.enable": false,
   //"highlight.colors.enable": false,
   //"highlight.disableLanguages": [],
   //"highlight.document.enable": false,
-  //"list.source.grep.args": ["--hidden", "--color"],
   //"list.source.grep.args": ["-color"],
+  "list.source.grep.args": ["--hidden"],
+  //"list.source.grep.args": ["--color", "--hidden"],
+  //"list.source.grep.command": "rg",
   //"list.source.grep.command": "ag",
   "list.source.grep.excludePatterns": [],
   //"list.source.grep.useLiteral": false,
   "lists.disabledLists": [],
   "session.saveOnVimLeave": false,
+  "signature.target": "echo",
   "snippets.extends": {
     "cpp": ["c"],
     "typescript": ["javascript"]
@@ -34,5 +39,5 @@
   "typescript.preferences.quoteStyle": "double",
   "typescript.showUnused": false,
   //"vetur.enable": false,
-  "vetur.experimental.templateInterpolationService": false
+  //"vetur.experimental.templateInterpolationService": false
 }

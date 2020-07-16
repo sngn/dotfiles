@@ -24,6 +24,7 @@ set binary              "Write files as they are, don't mess with line endings e
 "set clipboard=unnamedplus
 set completeopt-=preview
 set diffopt+=algorithm:patience
+set exrc                "enable external configuration; also put 'set secure' at end of vimrc
 set fileformats=unix,dos,mac  "Use Unix as the standard file type
 set lazyredraw          "Don't redraw while executing macros (good performance config)
 "set list                "Enable invisible characters.
@@ -44,7 +45,7 @@ syntax on               "Enable syntax highlighting
 
 " Specify the behavior when switching between buffers
 try
-    set switchbuf=useopen,usetab,newtab	" This option controls the behavior when switching between buffers.
+    set switchbuf=useopen,usetab,newtab    " This option controls the behavior when switching between buffers.
     set showtabline=1   " The value of this option specifies when the line with tab page labels
                         " will be displayed:
                         "    0: never
@@ -82,15 +83,15 @@ set nobackup
 set backupcopy=auto
 " patch required to honor double slash at end
 if has("patch-8.1.0251")
-	" consolidate the writebackups -- not a big
-	" deal either way, since they usually get deleted
-	set backupdir^=~/.vim/backup//
+    " consolidate the writebackups -- not a big
+    " deal either way, since they usually get deleted
+    set backupdir^=~/.vim/backup//
 end
 
 " persist the undo tree for each file
 set undofile
 set undodir^=~/.vim/undo//
-set undolevels=1000	 	" Maximum number of changes that can be undone.
+set undolevels=1000         " Maximum number of changes that can be undone.
 set undoreload=10000
 
 " => User Interface {{{1
@@ -99,10 +100,10 @@ set number              " Show line numbers
 set ruler               " Show the line and column number of the cursor position, separated by a
                         " comma.  When there is room, the relative position of the displayed
                         " text in the file is shown on the far right:
-                        " Top 	first line is visible
-                        " Bot 	last line is visible
-                        " All 	first and last line are visible
-                        " 45% 	relative position in the file
+                        " Top     first line is visible
+                        " Bot     last line is visible
+                        " All     first and last line are visible
+                        " 45%     relative position in the file
 set noerrorbells        " Beep or flash screen on errors
 set novisualbell        " Use visual bell (no beeping)
 
@@ -171,66 +172,66 @@ nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
-	exe "normal mz"
-	%s/\s\+$//ge
-	exe "normal `z"
+    exe "normal mz"
+    %s/\s\+$//ge
+    exe "normal `z"
 endfunc
 
 function! CmdLine(str)
-	exe "menu Foo.Bar :" . a:str
-	emenu Foo.Bar
-	unmenu Foo
+    exe "menu Foo.Bar :" . a:str
+    emenu Foo.Bar
+    unmenu Foo
 endfunction
 
 function! VisualSelection(direction, extra_filter) range
-	let l:saved_reg = @"
-	execute "normal! vgvy"
+    let l:saved_reg = @"
+    execute "normal! vgvy"
 
-	let l:pattern = escape(@", '\\/.*$^~[]')
-	let l:pattern = substitute(l:pattern, "\n$", "", "")
-	
-	if a:direction == 'b'
-		execute "normal ?" . l:pattern . "^M"
-	elseif a:direction == 'gv'
-		call CmdLine("Ack \"" . l:pattern . "\" " )
-	elseif a:direction == 'replace_global'
-		call CmdLine("%s" . '/'. l:pattern . '/')
-	elseif a:direction == 'replace_end'
-		call CmdLine(".,$s" . '/'. l:pattern . '/')
-	elseif a:direction == 'f'
-		execute "normal /" . l:pattern . "^M"
-	endif
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+    
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . "^M"
+    elseif a:direction == 'gv'
+        call CmdLine("Ack \"" . l:pattern . "\" " )
+    elseif a:direction == 'replace_global'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    elseif a:direction == 'replace_end'
+        call CmdLine(".,$s" . '/'. l:pattern . '/')
+    elseif a:direction == 'f'
+        execute "normal /" . l:pattern . "^M"
+    endif
 
-	let @/ = l:pattern
-	let @" = l:saved_reg
+    let @/ = l:pattern
+    let @" = l:saved_reg
 endfunction
 
 " Returns true if paste mode is enabled
 function! HasPaste()
-	if &paste
-		return 'PASTE MODE '
-	en
-	return ''
+    if &paste
+        return 'PASTE MODE '
+    en
+    return ''
 endfunction
 
 " Don't close window, when deleting a buffer
 command! Bclose call <SID>BufcloseCloseIt()
 function! <SID>BufcloseCloseIt()
-	let l:currentBufNum = bufnr("%")
-	let l:alternateBufNum = bufnr("#")
+    let l:currentBufNum = bufnr("%")
+    let l:alternateBufNum = bufnr("#")
 
-	if buflisted(l:alternateBufNum)
-		buffer #
-	else
-		bnext
-	endif
-	
-	if bufnr("%") == l:currentBufNum
-		new
-	endif
-	
-	if buflisted(l:currentBufNum)
-		execute("bdelete! ".l:currentBufNum)
-	endif
+    if buflisted(l:alternateBufNum)
+        buffer #
+    else
+        bnext
+    endif
+    
+    if bufnr("%") == l:currentBufNum
+        new
+    endif
+    
+    if buflisted(l:currentBufNum)
+        execute("bdelete! ".l:currentBufNum)
+    endif
 endfunction
 
