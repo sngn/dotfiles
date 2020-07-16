@@ -114,7 +114,7 @@ set t_Co=256
 set background=dark
 "colorscheme Tomorrow-Night-Bright
 "colorscheme afterglow
-colorscheme hybrid
+"colorscheme hybrid
 "colorscheme kkruby
 "colorscheme radicalgoodspeed
 "colorscheme tender 

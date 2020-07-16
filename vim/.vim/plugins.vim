@@ -2,49 +2,33 @@
 " Configuration goes in the appropriate modules/plugins/*.vim file.
 " So configuration for tmux.vim would go in modules/plugins/tmux.vim.vim
 
+if !has('win32') && !has('win32unix')
+
 " loads matchit plugin (included in vim distribution)
 if !has('nvim') 
   packadd! matchit
 endif
 
-"Plug 'Shougo/unite-outline'
-"Plug 'Shutnik/jshint2.vim'               "Lightweight, customizable and functional Vim plugin for JSHint integration
-"Plug 'grassdog/tagman.vim'               "Vim plugin for managing ctags files
-"Plug 'klen/python-mode'
-"Plug 'ludovicchabant/vim-gutentags'      "A Vim plugin that manages your tag files
-"Plug 'marijnh/tern_for_vim'              "Tern plugin for Vim
-"Plug 'skammer/vim-css-color'
-"Plug 'szw/vim-tags'                      "Ctags generator for Vim
-
-"Plug 'Glench/Vim-Jinja2-Syntax'          "An up-to-date jinja2 syntax file. https://github.com/mitsuhiko/jinja2
 Plug 'Shougo/context_filetype.vim'        "Context filetype library for Vim script
-"Plug 'Shougo/denite.nvim'                 "Dark powered asynchronous unite all interfaces for Neovim/Vim8
-"Plug 'Shougo/neco-syntax'                 "Syntax source for neocomplete/deoplete/ncm
-"Plug 'Shougo/neco-vim'                    "The vim source for neocomplete/deoplete
-"Plug 'Shougo/neoinclude.vim'              "Include completion framework for neocomplete/deoplete 
-"Plug 'Shougo/neopairs.vim'                "Auto insert pairs when complete done 
-"Plug 'Shougo/neosnippet-snippets'
-"Plug 'Shougo/neosnippet.vim'             "adds snippet support
 Plug 'Shougo/neossh.vim'                 "SSH interface for Vim plugins
-"Plug 'Shougo/unite-session'
-"Plug 'Shougo/vimfiler.vim'               "File Manager
 Plug 'Shougo/vimproc.vim', { 'do': 'make' } "Interactive command execution in Vim
-"Plug 'Slava/vim-spacebars'               "spacebars, mustache and handlebars mode for vim http://mustache.github.io
 Plug 'alvan/vim-closetag'                "Auto close (X)HTML tags 
-Plug 'anekos/hledger-vim'                "For writing hledger journal
-"Plug 'autozimu/LanguageClient-neovim', {  
-    "\ 'branch': 'next',
-    "\ 'do': 'bash install.sh',
-    "\ }                                  "Language Server Protocol (LSP) support for vim and neovim
+
+endif
+
 Plug 'bling/vim-airline'                 "lean & mean status/tabline for vim that's light as air
-"Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-"Plug 'ctrlpvim/ctrlp.vim'                 "Fuzzy file, buffer, mru, tag, etc finder. http://ctrlpvim.github.com/ctrlp.vim
-"Plug 'davidhalter/jedi-vim'               "awesome Python autocompletion with VIM
 Plug 'easymotion/vim-easymotion'
-"Plug 'farseer90718/vim-taskwarrior'      "vim interface for taskwarrior 
-Plug 'flazz/vim-colorschemes'            "one colorscheme pack to rule them all!
-"Plug 'flowtype/vim-flow', { 'for': 'javascript' } "A vim plugin for Flow 
+
+if !has('win32') && !has('win32unix')
+
+Plug 'flazz/vim-schemes'            "one colorscheme pack to rule them all!
+
+endif
+
 Plug 'honza/vim-snippets'
+
+if !has('win32') && !has('win32unix')
+
 "Plug 'jelera/vim-javascript-syntax'      "Enhanced javascript syntax file for Vim
 Plug 'jmcomets/vim-pony'                 "Pony power for working with Django projects
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -56,8 +40,14 @@ Plug 'lervag/vimtex'                     "A modern vim plugin for editing LaTeX 
 Plug 'majutsushi/tagbar'                 "Vim plugin that displays tags in a window, ordered by scope http://majutsushi.github.com/tagbar/
 Plug 'michaeljsmith/vim-indent-object'   "plugin that defines a new text object representing lines of code at the same indent level
 Plug 'mileszs/ack.vim'                   "Vim plugin for the Perl module / CLI script 'ack'
+
+endif
+
 Plug 'nathanaelkane/vim-indent-guides'   "Indentation Guides
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
+
+if !has('win32') && !has('win32unix')
+
 Plug 'othree/javascript-libraries-syntax.vim' "Syntax for JavaScript libraries
 "Plug 'othree/jspc.vim'                   "JavaScript Parameter Complete
 """ this makes vim VERY slow, at least in *.vue files
@@ -106,3 +96,4 @@ Plug 'sheerun/vim-polyglot'
 
 Plug '~/programming/projects/vim-i3blocks-syntax'
 
+endif
