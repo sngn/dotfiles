@@ -5,10 +5,18 @@
   "main": ".eslintrc.js",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^6.1.0",
-    "neovim": "^4.5.0",
-    "npm": "^6.10.2",
-    "npm-check-updates": "^3.1.20"
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-pipeline-operator": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^6.1.2",
+    "npm-check-updates": "^4.0.1",
+    "typescript": "^3.7.5",
+    "yo": "^3.1.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

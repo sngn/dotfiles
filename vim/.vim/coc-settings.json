@@ -4,6 +4,9 @@
   //"coc.preferences.hoverTarget": "float", 
   "coc.preferences.jumpCommand": "drop",
   //"eslint.enable": false,
+  "eslint.options": {
+    "configFile": "/home/max/.eslintrc.js"
+  },
   "javascript.preferences.quoteStyle": "double",
   "javascript.showUnused": false,
   //"json.enable": false,

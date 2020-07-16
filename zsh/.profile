@@ -25,7 +25,7 @@ echo ".profile"
 # "Global" for $USER
 PATH=~/npm/bin:$PATH
 #export npm_config_prefix=~/npm
-export NPM_CONFIG_PREFIX=~/npm
+#export NPM_CONFIG_PREFIX=~/npm
 # "Local" for $USER
 PATH=~/node_modules/.bin:$PATH
 
@@ -37,6 +37,7 @@ export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 
 PATH=$HOME/bin/appimages:$PATH
 PATH=$HOME/bin:$PATH
+PATH=$HOME/bin/tmux_sessions:$PATH
 
 export PATH
 
