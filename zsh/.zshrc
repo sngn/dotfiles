@@ -21,6 +21,5 @@ if [[ -o interactive ]]; then
 fi
 
 source ~/.zsh/config/config.zsh
+#source ~/.config/broot/launcher/bash/br
 
-
-source /home/max/.config/broot/launcher/bash/br
