@@ -24,7 +24,9 @@
 #
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
-command=/usr/lib/i3blocks/$BLOCK_NAME
+# Change $SCRIPT_DIR to the location of your scripts!
+#command=$SCRIPT_DIR/$BLOCK_NAME
+command=$SCRIPT_DIR/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
@@ -33,24 +35,26 @@ markup=none
 # The first parameter sets the step (and units to display)
 # The second parameter overrides the mixer selection
 # See the script for details.
-#[volume]
-#label=VOL
-##label=♪
+
+[volume]
+#label=♪
+label=VOL
+interval=once
+signal=10
+STEP=5%
 #instance=Master
 ##instance=PCM
-#interval=once
-#signal=10
 
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=MEM
+label=MEM 
 separator=false
 interval=300
 
 [memory]
-label=SWAP
+label=SWAP 
 instance=swap
 separator=false
 interval=600
@@ -61,52 +65,70 @@ interval=600
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=HOME
-#instance=/mnt/data
+label=HOME 
+#DIR=/mnt/data
 interval=300
+#instance=/mnt/data
 
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
+#IFACE=wlan0
 color=#00FF00
 interval=60
-separator=false
+#separator=false
 separator_block_width=5
 
-[bandwidth]
-#instance=eth0
-interval=5
+#[bandwidth]
+##INTERFACE=eth0
+#interval=5
+##label=bw 
 
-## WIFI
-[wifi]
-#command=$SCRIPT_DIR/i3blocks-contrib/wlan-dbm/wlan-dbm
-command=$I3BLOCKS_CONTRIB_DIR/wlan-dbm/wlan-dbm
-label=W:
-instance=wlp2s0
+#[bandwidth3] # not working
+#markup=pango
+#interval=persist
+##label=bw3 
+##LABEL=<span font='FontAwesome'> </span>
+##IFACE=[automatically determined]
+##DT=3
+##UNIT=Mb
+## Exposed variables: rx, wx, tx, unit, iface
+##PRINTF_COMMAND=printf "${LABEL}%-5.1f/%5.1f %s/s\n", rx, wx, unit; # not working
+##PRINTF_COMMAND=printf "${LABEL}%-5.1f/%5.1f %s/s\n", wx, rx, unit;
+
+#[wifi]
+#INTERFACE=wlp2s0
+#label=wifi:
+#interval=10
+#separator=false
+
+[wlan-dbm]
+IFACE=wlp2s0
+label=W: 
 interval=10
 separator=false
 separator_block_width=5
 
-[ssid]
-command=$SCRIPT_DIR/i3blocks/blocks/ssid
-interval=60
+[essid]
+INTERFACE=wlp2s0
+interval=120
 separator=false
 separator_block_width=5
 
 [iface]
-instance=wlp2s0
-color=#00FF00
-interval=30
-#separator=false
-
-## Ethernet
-[iface]
-label=E:
-instance=enp0s31f6
+IFACE=wlp2s0
 color=#00FF00
 interval=60
+separator=false
+
+### Ethernet
+[iface]
+IFACE=enp0s31f6
+label=E: 
+color=#00FF00
+interval=120
 #separator=false
 
 # CPU usage
@@ -120,6 +142,7 @@ interval=60
 #separator=false
 
 [load_average]
+#label=LOAD 
 interval=10
 
 # Battery indicator
@@ -128,8 +151,8 @@ interval=10
 [battery]
 #label=BAT
 label=⚡
-#instance=1
-interval=30
+#interval=60
+interval=120
 
 # Date Time
 #
@@ -168,12 +191,14 @@ interval=5
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 #[keyindicator]
-#instance=CAPS
+#KEY=CAPS
+#markup=pango
 #interval=once
 #signal=11
 
 #[keyindicator]
-#instance=NUM
+#KEY=NUM
+#markup=pango
 #interval=once
 #signal=11
 

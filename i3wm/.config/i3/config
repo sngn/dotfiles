@@ -200,8 +200,8 @@ bindsym $mod+r mode "resize"
 #}
 
 bar {
-        status_command SCRIPT_DIR=~/bin/i3blocks I3BLOCKS_CONTRIB_DIR=$SCRIPT_DIR/i3blocks-contrib i3blocks
-        #tray_output primary
+        #status_command SCRIPT_DIR=~/bin/i3blocks I3BLOCKS_CONTRIB_DIR=$SCRIPT_DIR/i3blocks-contrib i3blocks
+        status_command SCRIPT_DIR=~/bin/i3blocks/i3blocks-contrib i3blocks
 }
 
 #bar {

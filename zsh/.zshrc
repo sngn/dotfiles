@@ -22,3 +22,5 @@ fi
 
 source ~/.zsh/config/config.zsh
 
+
+source /home/max/.config/broot/launcher/bash/br
