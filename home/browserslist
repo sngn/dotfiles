@@ -1,0 +1,27 @@
+# Supported Browsers
+
+last 2 major versions
+#last 1 major versions
+
+#> 0.5% in AT
+#> 0.5% in DE
+#> 0.5% in CH
+
+#and_chr >= 71
+#and_ff  >= 64
+#chrome  >= 72
+#edge    >= 18
+#firefox >= 65
+#ie      >= 11
+#ie_mob  < 12
+#ios     >= 11
+#ios_saf >= 12.1
+#op_mini all
+#safari  >= 12
+#samsung < 8.2
+
+# IE 11 does not support Proxies
+not ie all
+
+not dead
+

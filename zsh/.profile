@@ -32,7 +32,8 @@ PATH=~/node_modules/.bin:$PATH
 ### Ruby
 #PATH=~/.gem/ruby/2.4.0/bin:$PATH
 #PATH=~/.gem/ruby/2.5.0/bin:$PATH
-PATH=~/.gem/ruby/2.6.0/bin:$PATH
+#PATH=~/.gem/ruby/2.6.0/bin:$PATH
+PATH=~/.gem/ruby/2.7.0/bin:$PATH
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 
 PATH=$HOME/bin/appimages:$PATH
