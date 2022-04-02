@@ -48,7 +48,6 @@ configuration {
 /*	window-format: "{w}    {c}   {t}";*/
 /*	click-to-exit: true;*/
 /*	theme: ;*/
-	theme: "theme-Arc-Dark.rasi";
 /*	max-history-size: 25;*/
 /*	combi-hide-mode-prefix: false;*/
 /*	matching-negate-char: '-' /* unsupported */;*/
@@ -150,3 +149,4 @@ configuration {
   }
 }
 //@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+@theme "theme-Arc-Dark.rasi"
