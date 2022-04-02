@@ -1,7 +1,9 @@
-echo ".zsh/config/aliases.zsh"
+echo ".zsh/config/broot.zsh"
 #-----------------------------------------------------------------------------
-# Aliases
+# broot
 #-----------------------------------------------------------------------------
 
-source $HOME/.aliases
+FILE="$HOME/.config/broot/launcher/bash/br"
+
+[[ -r $FILE ]] && source $FILE
 

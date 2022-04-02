@@ -1,19 +1,19 @@
-function godmode() {
 ### make user root and start a terminal multiplexer
-	TERMINAL_MULTIPLEXER=`whence tmux`
-    #echo $TERMINAL_MULTIPLEXER
+function godmode() {
+  TERMINAL_MULTIPLEXER=`whence tmux`
+  #echo $TERMINAL_MULTIPLEXER
 
-    INIT_COMMAND="cd /etc; $TERMINAL_MULTIPLEXER"
-    #echo $INIT_COMMAND
+  INIT_COMMAND="cd /etc; $TERMINAL_MULTIPLEXER"
+  #echo $INIT_COMMAND
 
-	case $USER in
-		(root)
-            $INIT_COMMAND
-			;;
-		(*)
-            /usr/bin/su --login --shell=$SHELL --command="$INIT_COMMAND";
-			;;
-	esac
+  case $USER in
+    (root)
+      $INIT_COMMAND
+      ;;
+    (*)
+      /usr/bin/su --login --shell=$SHELL --command="$INIT_COMMAND";
+      ;;
+  esac
 }
 
-#  vim: set ts=4 sw=2 tw=0 et filetype=zsh :
+#  vim: set ts=4 sw=4 tw=0 foldmethod=manual et filetype=zsh :

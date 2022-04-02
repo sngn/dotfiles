@@ -1,7 +1,8 @@
-echo ".zsh/config/aliases.zsh"
+echo ".zsh/config/fzf.zsh"
 #-----------------------------------------------------------------------------
-# Aliases
+# FZF
 #-----------------------------------------------------------------------------
 
-source $HOME/.aliases
+[[ -r /etc/profile.d/fzf.zsh ]] && source /etc/profile.d/fzf.zsh
+[[ -r ~/.fzf.zsh ]] && source ~/.fzf.zsh
 

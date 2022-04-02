@@ -76,7 +76,6 @@ module.exports = {
     "font-family-no-duplicate-names": true,
     "font-family-no-missing-generic-family-keyword": true,
     "font-weight-notation": "named-where-possible",
-    "function-calc-no-invalid": true,
     "function-calc-no-unspaced-operator": true,
     "function-comma-space-after": "always-single-line",
     "function-comma-space-before": "never-single-line",
@@ -141,13 +140,12 @@ module.exports = {
     ],
     "property-no-vendor-prefix": true,
     "scss/at-mixin-argumentless-call-parentheses": "always",
-    //"scss/at-mixin-named-arguments": "always",
-    "scss/at-mixin-named-arguments": [
-      "always",
-      {
-        "ignore": ["single-argument"],
-      },
-    ],
+    //"scss/at-mixin-named-arguments": [
+      //"always",
+      //{
+        //"ignore": ["single-argument"],
+      //},
+    //],
     "scss/at-mixin-parentheses-space-before": "always",
     //"scss/at-mixin-pattern": "",
     "scss/at-rule-no-unknown": true,
@@ -203,7 +201,17 @@ module.exports = {
     ],
     "selector-pseudo-element-case": "lower",
     "selector-pseudo-element-colon-notation": "double",
-    "selector-pseudo-element-no-unknown": true,
+    "selector-pseudo-element-no-unknown": [
+      true,
+      {
+        ignorePseudoElements: [
+          "range-lower",
+          "range-thumb",
+          "range-track",
+          "range-upper",
+        ],
+      },
+    ],
     "selector-type-no-unknown": [
       true,
       {

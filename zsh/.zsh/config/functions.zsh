@@ -1,7 +1,10 @@
-echo ".zsh/config/aliases.zsh"
 #-----------------------------------------------------------------------------
-# Aliases
+# Functions
 #-----------------------------------------------------------------------------
 
-source $HOME/.aliases
+fpath=( ${ZSHCONFDIR}/functions "${fpath[@]}" )
+#autoload -U $fpath[1]/*(.:t)
+autoload -Uz godmode
+autoload -Uz install_zplug
+autoload -Uz lspath
 

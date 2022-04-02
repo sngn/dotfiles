@@ -1,7 +1,7 @@
 /* eslint-env node */
 /* eslint-disable sort-keys */
 
-//const HOME = require("os").homedir();
+const HOME = require("os").homedir();
 //const SRC = `${HOME}/src.eslint`;
 const SRC = `.`;
 
@@ -36,7 +36,7 @@ const babelParserOptions = {
   babelOptions: {
     configFile: `${__dirname}/babel.config.js`,
   },
-  parser: "babel-eslint",
+  parser: "@babel/eslint-parser",
 };
 
 const babelParserOptionsCombined = {
@@ -47,16 +47,14 @@ const babelParserOptionsCombined = {
 const tsParserOptions = {
   extraFileExtensions: [".svelte"],
   //parser: "@typescript-eslint/parser",
-  project: ["./tsconfig.json"],
-  tsconfigRootDir: __dirname,
+  project: `${HOME}/tsconfig.json`,
+  tsconfigRootDir: HOME,
 };
 
-//export default {
 module.exports = {
   env: {
     //browser: true,
     es6: true,
-    //"es2017": true,
     es2020: true,
   },
   extends: [
@@ -67,7 +65,6 @@ module.exports = {
     SharedArrayBuffer: "readonly",
     globalThis: "readonly",
   },
-  //parser: "babel-eslint",
   parserOptions,
   //parserOptions: babelParserOptionsCombined,
   plugins: [
@@ -78,25 +75,18 @@ module.exports = {
     "@typescript-eslint",
   ],
   overrides: [
-    { // lang="ts" svelte files
+    { // svelte files
       extends: [
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
-      files: [
-        //"**/*.svelte",
-        "**/*.ts.svelte",
-      ],
+      files: ["*.svelte"],
       processor: "svelte3/svelte3",
       parser: "@typescript-eslint/parser",
       parserOptions: tsParserOptions,
       //rules: tsRules,
       rules: tsRulesForSvelte,
-    },
-    { // regular svelte files
-      files: ["**/*.svelte"],
-      processor: "svelte3/svelte3",
     },
     { // ts files
       extends: [
@@ -126,6 +116,7 @@ module.exports = {
   rules: eslintRules,
   settings: {
     "html/indent": "0",
+    "html/report-bad-indent": "warn",
     //"svelte3/ignore-styles": () => true,
     //"svelte3/named-blocks": true,
     "svelte3/typescript": typescript,

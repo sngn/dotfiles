@@ -18,7 +18,7 @@ function! Venv_add_path()
     let &path .= ',' . venvpath
   endif
 endfunction
-:call Venv_add_path()
+":call Venv_add_path()
 
 augroup enter_python_mode
 	autocmd!

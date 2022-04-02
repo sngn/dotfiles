@@ -1,0 +1,124 @@
+#!/usr/bin/env node
+/* eslint-env node */
+
+const {execSync} = require ("child_process");
+const readline = require ("readline");
+const util = require ("util");
+
+// ### ### ###
+
+const listOrphansCmd = "pacman -Qdt";
+//const rmOrphansCmd = `echo`; // for testing
+const rmOrphansCmd = `sudo pacman -R --noconfirm`;
+
+// ### configuration
+const cmdargs = process.argv.slice(2);
+
+const switchInteractive = ["-i", "--interactive"];
+const cfgInteractive = Boolean (cmdargs.find ((arg) => switchInteractive.includes (arg)));
+
+// ### functions
+function removePackages (pkgsWithVersionsArr) {
+  //console.log ("removePackages", pkgsWithVersionsArr);
+
+  const pkgNames = pkgsWithVersionsArr.reduce ((acc, pkgVersion) => {
+    const pkg = pkgVersion.split (" ") [0];
+
+    if (pkg) { acc.push (pkg); }
+
+    return acc;
+    }, []);
+
+  const pksString = pkgNames.join (" ");
+  const cmd = `${rmOrphansCmd} ${pksString}`;
+
+  try {
+    execSync (cmd, {stdio: "inherit"});
+  } catch (e) {
+    //process.exit (1);
+  }
+
+  return pkgNames;
+}
+
+// ### program
+let loBuf;
+
+try {
+  loBuf = execSync (listOrphansCmd);
+} catch (e) {
+  loBuf = null;
+}
+
+const loBufString = loBuf ? loBuf.toString () : "";
+const loArr = loBufString.split ("\n").filter ((s) => s !== "");
+
+const handleAnswer = (rl) => (answer) => {
+  if (answer instanceof Error) {
+    //console.log ("handleAnswer", "error\n", answer);
+    console.log ("\n", answer); /* eslint-disable-line no-console */
+
+    process.exit (1);
+  } else {
+    //console.log ("handleAnswer", "answer", answer);
+
+    const yesNo = answer ? String (answer) : "Y";
+
+    if (yesNo.toUpperCase () === "Y") {
+      //console.log ("\nRemoving packages.");
+
+      removePackages (loArr);
+    } else {
+      console.log ("\nNot doing anything."); /* eslint-disable-line no-console */
+    }
+
+    rl.close ();
+  }
+};
+
+function qRemovePackages (rl, qFn) {
+  //console.log ("qRemovePackages");
+
+  const handler = handleAnswer (rl);
+  const text = "Remove these packages? (Y/n) ";
+
+  // qFn is strange in that the error get propagated in the success path and vice versa
+  // because promisify expects a (error, success) => { ... type callback but
+  // question expects a (answer) => { ... function as callback
+  return qFn (text)
+    .then (handler)
+    .catch (handler);
+}
+
+if (loArr.length) {
+  // display the packages to be removed
+  console.log (loBufString); /* eslint-disable-line no-console */
+
+  if (cfgInteractive) {
+    //console.log ("interactive mode");
+
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    });
+
+    rl.on("close", function() {
+      //console.log("\nClosing readline interface");
+
+      process.exit (0);
+    });
+
+    const question = util.promisify (rl.question).bind (rl);
+
+    void qRemovePackages (rl, question);
+  } else {
+    removePackages (loArr);
+    process.exit (0);
+  }
+} else {
+  console.log ("Found no orphaned packages."); /* eslint-disable-line no-console */
+  process.exit (0);
+}
+
+//console.log ("\nEnd of file.");
+

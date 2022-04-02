@@ -1,0 +1,13 @@
+### $1: path to add
+### $2: optional "after" to add at the end
+function pathmunge() {
+  if ! echo "$PATH" | /usr/bin/grep -Eq "(^|:)$1($|:)" ; then
+    if [ "$2" = "after" ] ; then
+      PATH="$PATH:$1"
+    else
+      PATH="$1:$PATH"
+    fi
+  fi
+}
+
+#  vim: set ts=4 sw=2 tw=0 foldmethod=manual et filetype=zsh :

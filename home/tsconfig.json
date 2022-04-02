@@ -1,0 +1,59 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "allowJs": true, // Allow JavaScript files to be imported inside your project
+    "allowSyntheticDefaultImports": true, // allows you to write an import like: import React from "react";
+    //"allowUnusedLabels": true, // When undefined (default) provide suggestions as warnings to editors, when true unused labels are ignored
+    "alwaysStrict": true, // Ensures that your files are parsed in the ECMAScript strict mode, and emit “use strict” for each source file.
+    "baseUrl": ".", // Lets you set a base directory to resolve non-absolute module names.
+    "checkJs": true, // Works in tandem with allowJs. When checkJs is enabled then errors are reported in JavaScript files.
+    "declaration": true, // output .d.ts declaration files for consumers
+    "declarationMap": true, // Generates a source map for .d.ts files which map back to the original .ts source file.
+    "downlevelIteration": false, // Downleveling is TypeScript’s term for transpiling to an older version of JavaScript.
+    "esModuleInterop": true, // interop between ESM and CJS modules. Recommended by TS
+    "forceConsistentCasingInFileNames": true, // error out if import and file system have a casing mismatch. Recommended by TS
+    "importHelpers": true, // helper functions are imported from the tslib module
+    "isolatedModules": true, // tells TypeScript to warn you if you write certain code that can’t be correctly interpreted by a single-file transpilation process
+    //"jsx": "react", // transpile JSX to React.createElement
+    "lib": [
+      "ES2020",
+    ],
+    "module": "ES2020",
+    "moduleResolution": "node", // use Node's module resolution algorithm, instead of the legacy TS one
+    "noEmit": true, // Do not emit compiler output files like JavaScript source code, source-maps or declarations.
+    "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statements. Ensures that any non-empty case inside a switch statement includes either break or return. 
+    //"noImplicitAny": true, // TypeScript will issue an error whenever it would have inferred any
+    "noImplicitOverride": true, // Using noImplicitOverride you can ensure that the sub-classes never go out of sync, by ensuring that functions which override include the keyword override.
+    "noImplicitReturns": true, // TypeScript will check all code paths in a function to ensure they return a value.
+    //"noImplicitThis": true, // Raise error on ‘this’ expressions with an implied ‘any’ type.
+    "noUncheckedIndexedAccess": true, // Turning on noUncheckedIndexedAccess will add undefined to any un-declared field in the type.
+    // noUnused* overlap with @typescript-eslint/no-unused-vars, can disable if duplicative
+    "noUnusedLocals": true, // Report errors on unused local variables.
+    "noUnusedParameters": true, // Report errors on unused parameters in functions.
+    //"outDir": "./dist/",
+    "paths": {
+    },
+    "plugins": [],
+    //"preserveConstEnums": true, // Do not erase const enum declarations in generated code.
+    "removeComments": false, // Strips all comments from TypeScript files when converting into JavaScript.
+    "resolveJsonModule": true, // Allows importing modules with a ‘.json’ extension
+    //"rootDir": "./src", // Default: The longest common path of all non-declaration input files. match output dir to input dir. e.g. dist/index instead of dist/src/index
+    "skipLibCheck": true, // significant perf increase by skipping checking .d.ts files, particularly those in node_modules. Recommended by TS
+    "sourceMap": true, // Enables the generation of sourcemap files.
+    //"strict": true, // stricter type-checking for stronger correctness. Recommended by TS
+    "strictBindCallApply": true, // When set, TypeScript will check that the built-in methods of functions call, bind, and apply are invoked with correct argument for the underlying function
+    "strictFunctionTypes": true, // When enabled, this flag causes functions parameters to be checked more correctly.
+    "strictNullChecks": true, // When strictNullChecks is false, null and undefined are effectively ignored by the language. This can lead to unexpected errors at runtime.
+    "strictPropertyInitialization": true, // When set to true, TypeScript will raise an error when a class property was declared but not set in the constructor.
+    "target": "ES6", // The target setting changes which JS features are downleveled and which are left intact. 
+  },
+  "include": [
+    "**/*.js",
+    "**/*.svelte",
+    "**/*.ts",
+  ],
+  "exclude": [
+    "**/*.test.ts",
+  ]
+}
+

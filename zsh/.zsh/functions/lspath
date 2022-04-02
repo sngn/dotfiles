@@ -1,0 +1,3 @@
+echo $PATH | sed -e 's/:/\n/g'
+
+#  vim: set ts=4 sw=2 tw=0 foldmethod=manual et filetype=zsh :

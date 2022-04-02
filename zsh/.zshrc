@@ -1,25 +1,32 @@
 echo ".zshrc"
+#-----------------------------------------------------------------------------
+# ZSH Configuration
+#-----------------------------------------------------------------------------
 
-if [[ -o interactive ]]; then
-  #echo "*** interactive ***"
+export ZSHCONFDIR=$HOME/.zsh
+ZSHCOMPLETIONSDIR="$ZSHCONFDIR/completions"
 
-  ### smartcd
-  #[ -r "$HOME/.smartcd_config" ] && ( [ -n $BASH_VERSION ] || [ -n $ZSH_VERSION ] ) && source ~/.smartcd_config
-  [ -r "$HOME/.smartcd_config" ] && ( [ -n $BASH_VERSION ] || [ -n $ZSH_VERSION ] ) && source ~/.smartcd_config && alias scd='smartcd cd'
-  #export ENHANCD_COMMAND="smartcd cd"
-  export ENHANCD_COMMAND="scd"
-  export ENHANCD_DISABLE_DOT=1
+source ${ZSHCONFDIR}/config/default_options.zsh
 
-  ### z
-  [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+### BEFORE
+source $ZSHCONFDIR/config/poetry.zsh # before completions.zsh
+source $ZSHCONFDIR/config/zplug.zsh # before zsh.zsh
 
-  ### envoy 
-  #eval $(envoy -p)
+### UNORDERED
+source $ZSHCONFDIR/config/aliases.zsh
+source $ZSHCONFDIR/config/autosuggestions.zsh
+source $ZSHCONFDIR/config/completions.zsh
+source $ZSHCONFDIR/config/functions.zsh
+source $ZSHCONFDIR/config/node-yo.zsh
+source $ZSHCONFDIR/config/nvm.zsh
+source $ZSHCONFDIR/config/prompt.zsh
+source $ZSHCONFDIR/config/smartcd.zsh
+source $ZSHCONFDIR/config/z.zsh
+source $ZSHCONFDIR/config/zsh.zsh
 
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-fi
+### AFTER
 
-source ~/.zsh/config/config.zsh
-#source ~/.config/broot/launcher/bash/br
+# TODO order
+source ~/.zsh/config/path.zsh
+#source ~/.zsh/config/broot.zsh
 

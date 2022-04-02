@@ -1,4 +1,7 @@
-echo ".prompt.zsh"
+echo ".zsh/config/prompt.zsh"
+#-----------------------------------------------------------------------------
+# Prompt
+#-----------------------------------------------------------------------------
 
 function truncated_pwd() {
 	local collapse_width=60
@@ -11,6 +14,7 @@ function truncated_pwd() {
 		echo $PWD | sed 's|^$HOME|~|' 
 	fi
 }
+
 _fishy_collapsed_wd() {
   echo $(pwd | perl -pe "
    BEGIN {
@@ -19,7 +23,6 @@ _fishy_collapsed_wd() {
    }; s|^$HOME|~|g; s|/([^/])[^/]*(?=/)|/\$1|g
 ")
 } 
-
 
 # VCS integration for ZSH command prompt
 autoload -Uz vcs_info
@@ -37,6 +40,7 @@ zstyle ':vcs_info:*' actionformats '%B%c%u%m%%b%b %B%F{red}%s:%a%f%%b'
 function precmd() {
 	vcs_info
 }
+
 RPROMPT='%(?..%B%F{red}exit %?%f%b )${vcs_info_msg_0_}'
 # with oh-my-zsh fishy theme function
 #PROMPT='%F{%(!|red|green)}%n%f\

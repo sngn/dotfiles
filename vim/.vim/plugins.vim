@@ -17,7 +17,7 @@ endif
 "Plug 'szw/vim-tags'                      "Ctags generator for Vim
 
 "Plug 'Glench/Vim-Jinja2-Syntax'          "An up-to-date jinja2 syntax file. https://github.com/mitsuhiko/jinja2
-Plug 'Shougo/context_filetype.vim'        "Context filetype library for Vim script
+Plug 'Shougo/context_filetype.vim'       "Context filetype library for Vim script
 "Plug 'Shougo/denite.nvim'                 "Dark powered asynchronous unite all interfaces for Neovim/Vim8
 "Plug 'Shougo/neco-syntax'                 "Syntax source for neocomplete/deoplete/ncm
 "Plug 'Shougo/neco-vim'                    "The vim source for neocomplete/deoplete
@@ -47,10 +47,12 @@ Plug 'flazz/vim-colorschemes'            "one colorscheme pack to rule them all!
 Plug 'honza/vim-snippets'
 "Plug 'jelera/vim-javascript-syntax'      "Enhanced javascript syntax file for Vim
 Plug 'jmcomets/vim-pony'                 "Pony power for working with Django projects
+Plug 'jreybert/vimagit'                  "Ease your git workflow within vim
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 "Plug '~/.fzf', { 'do': './install --bin --no-update-rc' } "junegunn/fzf already cloned to ~/.fzf
 "Plug '~/.fzf', { 'do': './install --bin --no-update-rc --64' } "junegunn/fzf already cloned to ~/.fzf
 "Plug 'junegunn/fzf.vim'                  "fzf ❤️ vim
+Plug 'leafOfTree/vim-svelte-plugin'      "Vim syntax and indent plugin for .svelte files
 Plug 'ledger/vim-ledger'                 "Vim plugin for Ledger
 Plug 'lervag/vimtex'                     "A modern vim plugin for editing LaTeX files
 "Plug 'majutsushi/tagbar'                 "Vim plugin that displays tags in a window, ordered by scope http://majutsushi.github.com/tagbar/
@@ -62,6 +64,7 @@ Plug 'othree/javascript-libraries-syntax.vim' "Syntax for JavaScript libraries
 "Plug 'othree/jspc.vim'                   "JavaScript Parameter Complete
 """ this makes vim VERY slow, at least in *.vue files
 "Plug 'othree/yajs.vim'                   "YAJS.vim: Yet Another JavaScript Syntax for Vim 
+Plug 'petobens/poet-v'                   "plugin that detects and activates virtual environments in your python poetry or pipenv project
 Plug 'rafi/awesome-vim-colorschemes'     "Collection of awesome color schemes for Neo/vim, merged for quick use
 "Plug 'rking/ag.vim'                      "Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
 Plug 'severin-lemaignan/vim-minimap'     "A Sublime-like minimap for VIM, based on the Drawille console-based drawing library

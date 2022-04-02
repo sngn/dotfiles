@@ -1,7 +1,9 @@
-echo ".zsh/config/aliases.zsh"
+echo ".zsh/config/z.zsh"
 #-----------------------------------------------------------------------------
-# Aliases
+# z - Tracks your most used directories, based on 'frecency'
 #-----------------------------------------------------------------------------
 
-source $HOME/.aliases
+FILE="/usr/share/z/z.sh"
+
+[[ -r $FILE ]] && source $FILE
 
