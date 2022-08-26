@@ -278,6 +278,8 @@ exec /usr/bin/pa-applet
 ## NetworkManager applet
 exec --no-startup-id /usr/bin/nm-applet
 
-#exec --no-startup-id /usr/bin/redshift-gtk
+## neo_qwertz keyboard layout
+exec --no-startup-id setxkbmap -layout de -variant neo_qwertz
 
+#exec --no-startup-id /usr/bin/redshift-gtk
 

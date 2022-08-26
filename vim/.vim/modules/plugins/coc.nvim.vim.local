@@ -2,6 +2,7 @@ let g:coc_global_extensions = [
 \  'coc-css',
 \  'coc-eslint',
 \  'coc-html',
+\  'coc-java',
 \  'coc-json',
 \  'coc-neosnippet',
 \  'coc-prettier',

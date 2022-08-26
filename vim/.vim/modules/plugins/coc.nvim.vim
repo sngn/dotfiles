@@ -16,6 +16,7 @@ let g:coc_global_extensions = [
 \]
 
 "let g:coc_global_extensions = [
+"\  'coc-java',
 "\  'coc-git',
 "\  'coc-neosnippet',
 "\  'coc-omnisharp',
@@ -97,7 +98,7 @@ augroup coc_augroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+autocmd! CompleteDone * if coc#pum#visible() == 0 | pclose | endif
 
 "" Use <tab> for select selections ranges, needs server support, like: coc-tsserver, coc-python
 "nmap <silent> <TAB> <Plug>(coc-range-select)
@@ -108,46 +109,93 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 command! -nargs=0 Format :call CocAction('format')
 
 " Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " use `:OR` for organize import of current buffer
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
 
 "" Add status line support, for integration with other plugin, checkout `:h coc-status`
 "set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+
+""""" Completion
+" :help coc-completion-example
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+""" Trigger completion
+"Use <c-space> to trigger completion:
+"if has('nvim')
+  "inoremap <silent><expr> <c-space> coc#refresh()
+"else
+  "inoremap <silent><expr> <c-@> coc#refresh()
+"endif
+
+" Use <CR> to confirm completion, use:
+" \<C-g>u is used to break undo level
+"inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
+inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+"inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+
+
+"Map <tab> for trigger completion, completion confirm, snippet expand and jump
+"like VSCode:
+  "inoremap <silent><expr> <TAB>
+  "  \ coc#pum#visible() ? coc#_select_confirm() :
+  "  \ coc#expandableOrJumpable() ?
+  "  \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+  "  \ <SID>CheckBackspace() ? "\<TAB>" :
+  "  \ coc#refresh()
+
+  "let g:coc_snippet_next = '<tab>'
+""""" 
+
+
 """"" Completion with sources 
 " https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources
-""" Trigger completion
 " use <tab> for trigger completion and navigate to the next complete item
 "inoremap <silent><expr> <Tab>
-      "\ pumvisible() ? "\<C-n>" :
-      "\ <SID>check_back_space() ? "\<Tab>" :
-      "\ coc#refresh()
-
-" use <c-space>for trigger completion
-"inoremap <silent><expr> <c-space> coc#refresh()
+"      \ coc#pum#visible() ? coc#pum#next(1) :
+"      "\ <SID>check_back_space() ? "\<Tab>" : " old
+"      \ CheckBackspace() ? "\<Tab>" :
+"      \ coc#refresh()
 
 """ Improve the completion experience
 " Use <Tab> and <S-Tab> to navigate the completion list
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" you have to remap <cr> to make sure it confirm completion when pum is visible.
-" Coc only does snippet and additional edit on confirm.
-" \<C-g>u is used to break undo level
-" Use <cr> to confirm completion
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" To make <cr> select the first completion item and confirm the completion when no item has been selected:
-"inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-
-" To make coc.nvim format your code on <cr>
-"inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 " Close the preview window when completion is done.
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+autocmd! CompleteDone * if coc#pum#visible() == 0 | pclose | endif
 """"" 
+
+
+""""" coc-snippets
+" https://github.com/neoclide/coc-snippets
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+"let g:coc_snippet_next = '<tab>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+"imap <C-j> <Plug>(coc-snippets-expand-jump)
+""""" 
+
 
 """"" coc-list
 " https://github.com/neoclide/coc.nvim/wiki/Using-coc-list
@@ -283,42 +331,9 @@ nnoremap <silent> <space>w  :exe 'CocList -I --normal --input='.expand('<cword>'
 
 """"" 
 
-""""" coc-snippets
-" https://github.com/neoclide/coc-snippets
-
-" Use <C-l> for trigger snippet expand.
-"imap <C-l> <Plug>(coc-snippets-expand)
-
-" Use <C-j> for select text for visual placeholder of snippet.
-"vmap <C-j> <Plug>(coc-snippets-select)
-
-" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-"let g:coc_snippet_next = '<c-j>'
-"let g:coc_snippet_next = '<tab>'
-
-" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-"let g:coc_snippet_prev = '<c-k>'
-
-" Use <C-j> for both expand and jump (make expand higher priority.)
-"imap <C-j> <Plug>(coc-snippets-expand-jump)
-
-" Make <tab> used for trigger completion, completion confirm, snippet expand and jump like VSCode.
-"inoremap <silent><expr> <TAB>
-      "\ pumvisible() ? coc#_select_confirm() :
-      "\ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      "\ <SID>check_back_space() ? "\<TAB>" :
-      "\ coc#refresh()
-""""" 
-
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
 

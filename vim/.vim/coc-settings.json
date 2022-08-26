@@ -32,9 +32,12 @@
   //"suggest.floatEnable": false,
   // To make the completion automatically select the first completed item
   //"suggest.noselect": false,
+  "svelte.enable-ts-plugin": true,
   //"tsserver.enable": false,
   //"tsserver.enableJavascript": false,
-  "tsserver.npm": "/usr/bin/npm",
+  "tsserver.log": "normal",
+  //"tsserver.npm": "/usr/bin/npm",
+  "tsserver.tsdk": "/home/max/node_modules/typescript/lib",
   "typescript.preferences.quoteStyle": "double",
   "typescript.showUnused": false,
   //"vetur.enable": false,

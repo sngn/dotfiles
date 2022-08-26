@@ -1,6 +1,7 @@
 "let g:polyglot_disabled = ['coffee', 'latex']
 "let g:polyglot_disabled = ['coffee', 'latex', 'vue']
-let g:polyglot_disabled = ['coffee', 'latex', 'javascript']
+"let g:polyglot_disabled = ['coffee', 'latex', 'javascript']
+let g:polyglot_disabled = ['coffee', 'latex', 'javascript', 'svelte']
 "let g:polyglot_disabled = ['coffee', 'latex', 'javascript', 'vue']
 "let g:polyglot_disabled = ['javascript'] "issue with *.vue files <script> tag
 

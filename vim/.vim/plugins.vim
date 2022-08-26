@@ -51,6 +51,8 @@ Plug 'jmcomets/vim-pony'                 "Pony power for working with Django pro
 "Plug '~/.fzf', { 'do': './install --bin --no-update-rc' } "junegunn/fzf already cloned to ~/.fzf
 "Plug '~/.fzf', { 'do': './install --bin --no-update-rc --64' } "junegunn/fzf already cloned to ~/.fzf
 "Plug 'junegunn/fzf.vim'                  "fzf ❤️ vim
+"Plug 'lbrayner/vim-rzip'                 "Extends stock zipPlugin.vim to allow recursively browsing and writing Zip files
+Plug 'leafOfTree/vim-svelte-plugin'      "Vim syntax and indent plugin for .svelte files
 Plug 'ledger/vim-ledger'                 "Vim plugin for Ledger
 Plug 'lervag/vimtex'                     "A modern vim plugin for editing LaTeX files
 "Plug 'majutsushi/tagbar'                 "Vim plugin that displays tags in a window, ordered by scope http://majutsushi.github.com/tagbar/
@@ -65,7 +67,7 @@ Plug 'othree/javascript-libraries-syntax.vim' "Syntax for JavaScript libraries
 Plug 'rafi/awesome-vim-colorschemes'     "Collection of awesome color schemes for Neo/vim, merged for quick use
 "Plug 'rking/ag.vim'                      "Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
 Plug 'severin-lemaignan/vim-minimap'     "A Sublime-like minimap for VIM, based on the Drawille console-based drawing library
-Plug 'scrooloose/nerdcommenter'          "Vim plugin for intensely orgasmic commenting
+Plug 'preservim/nerdcommenter'           "Comment functions so powerful—no comment necessary
 "Plug 'scrooloose/syntastic'              "Syntastic is a syntax checking plugin
 "Plug 'sukima/xmledit'                    "A filetype plugin for VIM to help edit XML files
 "Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } "Tern plugin for Vim
@@ -103,5 +105,5 @@ Plug 'sheerun/vim-polyglot'
   "Plug 'roxma/vim-hug-neovim-rpc'
 "endif
 
-Plug '~/programming/projects/vim-i3blocks-syntax'
+"Plug '~/programming/projects/vim-i3blocks-syntax'
 

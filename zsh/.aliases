@@ -54,6 +54,10 @@ alias gxi='guix package -i'
 alias gxI='guix package -I'
 alias gxs='guix package -s'
 
+# eslint
+alias neslint='npx eslint'
+alias yeslint='yarn exec eslint'
+
 # OTHER
 alias cp='/usr/bin/cp --reflink=auto'
 alias diff='/usr/bin/colordiff'
