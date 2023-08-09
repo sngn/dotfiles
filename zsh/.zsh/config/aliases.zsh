@@ -5,3 +5,7 @@ echo ".zsh/config/aliases.zsh"
 
 source $HOME/.aliases
 
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+

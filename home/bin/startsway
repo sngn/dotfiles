@@ -1,0 +1,6 @@
+#!/usr/bin/zsh
+
+MOZ_ENABLE_WAYLAND=1 \
+XDG_CURRENT_DESKTOP=sway \
+dbus-run-session sway
+

@@ -4,7 +4,7 @@ echo ".zsh/config/node-yo.zsh"
 #-----------------------------------------------------------------------------
 
 # tabtab source for yo package
-FILE="$HOME/npm/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh"
+#FILE="$HOME/npm/lib/node_modules/yo/node_modules/tabtab/.completions/yo.zsh"
 
-[[ -r $FILE ]] && source $FILE
+#[[ -r $FILE ]] && source $FILE
 

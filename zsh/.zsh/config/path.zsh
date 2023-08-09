@@ -23,15 +23,18 @@ echo ".zsh/config/path.zsh"
 
 ### Node.js
 # "Global" for $USER
-path=("$HOME/npm/bin" "$path[@]")
-#export npm_config_prefix=$HOME/npm
-#export NPM_CONFIG_PREFIX=$HOME/npm
+export NPM_CONFIG_PREFIX="$HOME/.npm-global"
+path=("$NPM_CONFIG_PREFIX/bin" "$path[@]")
 # "Local" for $USER
 path=("$HOME/node_modules/.bin" "$path[@]")
 
 ### Ruby
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 path=("$GEM_HOME/bin" "$path[@]")
+
+### Java
+PATH_JAVA_PACKAGE_MANAGER="$HOME/jpm/bin"
+path=("$PATH_JAVA_PACKAGE_MANAGER" "$path[@]")
 
 ### local
 path=("$HOME/.local/bin" "$path[@]")

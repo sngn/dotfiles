@@ -52,6 +52,7 @@ Plug 'jreybert/vimagit'                  "Ease your git workflow within vim
 "Plug '~/.fzf', { 'do': './install --bin --no-update-rc' } "junegunn/fzf already cloned to ~/.fzf
 "Plug '~/.fzf', { 'do': './install --bin --no-update-rc --64' } "junegunn/fzf already cloned to ~/.fzf
 "Plug 'junegunn/fzf.vim'                  "fzf ❤️ vim
+Plug 'jupyter-vim/jupyter-vim'           "A two-way integration between Vim and Jupyter
 Plug 'leafOfTree/vim-svelte-plugin'      "Vim syntax and indent plugin for .svelte files
 Plug 'ledger/vim-ledger'                 "Vim plugin for Ledger
 Plug 'lervag/vimtex'                     "A modern vim plugin for editing LaTeX files

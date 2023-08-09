@@ -1,8 +1,5 @@
 ### ALIASES
-# CD -- might be better to use oh-my-zsh lib for that
 #alias ..='cd ..'
-alias -g ...='../..'
-alias -g ....='../../..'
 
 # PACMAN
 #alias pacman='/usr/bin/pacman'         # use different default options
