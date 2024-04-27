@@ -36,11 +36,17 @@ path=("$GEM_HOME/bin" "$path[@]")
 PATH_JAVA_PACKAGE_MANAGER="$HOME/jpm/bin"
 path=("$PATH_JAVA_PACKAGE_MANAGER" "$path[@]")
 
+### Cargo/Rust
+path=("$HOME/.cargo/bin" "$path[@]")
+
 ### local
 path=("$HOME/.local/bin" "$path[@]")
 path=("$HOME/bin/appimages" "$path[@]")
 path=("$HOME/bin" "$path[@]")
 path=("$HOME/bin/tmux_sessions" "$path[@]")
+
+### quickenv (shims executables, so needs to come first in PATH)
+path=("$HOME/.quickenv/bin" "$path[@]")
 
 typeset -U PATH path # remove duplicates from PATH and path
 export PATH

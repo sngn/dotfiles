@@ -5,13 +5,15 @@ echo ".zsh/config/zplug.zsh"
 
 FILE="$HOME/.zplug/init.zsh"
 
+# Disable async git prompt (oh-my-zsh new feature (git plugin?) - 202404)
+zstyle ':omz:alpha:lib:git' async-prompt no
+
 if [[ -r $FILE ]]; then
   source ~/.zplug/init.zsh
 
   #zplug "MichaelAquilina/zsh-autoswitch-virtualenv"
   zplug "akoenig/gulp.plugin.zsh"
   zplug "arzzen/calc.plugin.zsh"
-  zplug "b4b4r07/enhancd", use:"init.sh"
   zplug "jeffreytse/zsh-vi-mode"
   zplug "plugins/git", from:oh-my-zsh
   zplug "lib/clipboard", from:oh-my-zsh

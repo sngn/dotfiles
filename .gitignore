@@ -1,5 +1,6 @@
 *.old
 *.orig
+Session.vim
 
 #### Home ####
 .gitconfig

@@ -13,7 +13,3 @@ FILE="$HOME/.smartcd_config"
   && source $FILE \
   && alias scd='smartcd cd'
 
-#export ENHANCD_COMMAND="smartcd cd"
-export ENHANCD_COMMAND="scd"
-export ENHANCD_DISABLE_DOT=1
-

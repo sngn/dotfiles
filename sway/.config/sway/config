@@ -1,26 +1,17 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
 # Mod1 = Alt-key -- Mod4 = Win-key
-set $mod Mod4
-# Home row direction keys, like vim
-#set $left h
-#set $down j
-#set $up k
-#set $right l
-set $left j
-set $down k
-set $up l
-set $right odiaeresis
+set $alt Mod1
+set $super Mod4
+set $mod $super
 
-# Your preferred terminal emulator
-set $term /usr/bin/terminator
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $term kitty
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
@@ -29,20 +20,6 @@ set $term /usr/bin/terminator
 #set $menu rofi -show run
 set $menu rofi -show drun
 #set $menu rofi -show combi
-
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg #000000 solid_color
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-#output eDP-1 resolution 1920x1080 position 1920,0
 
 ### Idle configuration
 #
@@ -62,42 +39,20 @@ output * bg #000000 solid_color
     #resume 'swaymsg "output * dpms on"'
 exec swayidle -w timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 
-### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
-    input type:keyboard {
-        xkb_layout "de"
-        xkb_variant "neo_qwertz"
-    }
-
-    input type:touchpad {
-        tap enabled
-        natural_scroll disabled
-    }
-
 ### Key bindings
 #
 # Basics:
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+    bindsym $mod+q exec $term
 
     # Kill focused window
     bindsym $mod+Shift+q kill
 
     # Start your launcher
     #bindsym $mod+d exec $menu
-    bindsym mod1+space exec $menu
+    bindsym $alt+space exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -207,45 +162,47 @@ exec swayidle -w timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "outp
 #
 # Layout stuff:
 #
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    #bindsym $mod+b splith
-    bindsym $mod+h splith
-    bindsym $mod+v splitv
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+#bindsym $mod+b splith
+#bindsym $mod+v splitv
+bindsym $mod+bar splith
+bindsym $mod+underscore splitv
 
-    # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+# Switch the current container between different layout styles
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
-    # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
-    #bindsym $mod+f fullscreen toggle
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
 
-    # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
 
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+# Swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
 
-    # Move focus to the parent container
-    bindsym $mod+a focus parent
+# Move focus to the parent container
+bindsym $mod+a focus parent
 
-    # focus the child container
-    bindsym $mod+d focus child
+# focus the child container
+bindsym $mod+d focus child
+
 #
 # Scratchpad:
 #
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
 
-    # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
 
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
 #
 # Resizing containers:
 #
@@ -271,18 +228,9 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-bar {
-    swaybar_command waybar
-}
-
 include /etc/sway/config.d/*
-#include ~/.config/sway/conf.d/*
-#include ~/.config/sway/`hostname`/*
-
+include ~/.config/sway/conf.d/*
+include ~/.config/sway/`hostname`/*
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -292,11 +240,9 @@ include /etc/sway/config.d/*
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:DejaVu Sans Mono 8
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-
 ### max configuration begins now
 ## Lock Screen
-bindsym Mod1+Control+l exec "swaylock -f -c 000000"
+bindsym $alt+Control+l exec "swaylock -f -c 000000"
 
 ## Seitenränder verstecken
 hide_edge_borders vertical
@@ -304,20 +250,15 @@ hide_edge_borders vertical
 ## Zum momentan Workspace switchen = zum letzten Workspace switchen
 workspace_auto_back_and_forth yes
 ## next/previous window -- not correctly working - does only cycle through current container
-bindsym Mod1+Tab focus right
-bindsym Mod1+Shift+Tab focus left
+bindsym $alt+Tab focus right
+bindsym $alt+Shift+Tab focus left
 # eigentlich sollte das zum zuletzt aktiven Fenster wechseln, aber das geht noch nicht -- evtl sh rofi
 bindsym $mod+dead_circumflex focus mode_toggle
 ## next/previous workspace
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
-bindsym Mod1+Control+Left workspace prev
-bindsym Mod1+Control+Right workspace next
-
-#
-# notification daemon
-#
-exec mako
+bindsym $alt+Control+Left workspace prev
+bindsym $alt+Control+Right workspace next
 
 #
 # rofi bindings:
@@ -338,46 +279,18 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 #bindsym XF86MonBrightnessUp exec "brightnessctl set +10% && ~/bin/notify-brightness"
 #bindsym XF86MonBrightnessUp exec dsplight up 5
-#bindsym XF86AudioPlay exec playerctl play-pause
-#bindsym XF86AudioNext exec playerctl next
-#bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 #bindsym XF86Search exec bemenu-run
 
 #bindsym XF86Launch1 exec /usr/bin/pactl play-sample that_was_easy
-
-# Window Management
-for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
-for_window [app_id="firefox" title="Firefox - Choose User Profile"] floating enable
-for_window [app_id="mpv"] floating enable, resize set 60 ppt 60 ppt
-for_window [app_id="org.kde.dolphin" title="^Copying"] floating enable
-for_window [app_id="org.kde.dolphin" title="^Extracting"] floating enable
-for_window [app_id="org.kde.dolphin" title="^Moving"] floating enable
-for_window [class="Pidgin" title="Buddy List"] floating enable
-for_window [class="QjackCtl" title="^JACK Audio Connection Kit"] floating enable
-for_window [app_id="ulauncher" title="Ulauncher Preferences"] floating enable, resize set 60 ppt 60 ppt
-
-# Autostart
-exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
-
-# SSH Keys
-
-# Clipboard
-#exec wl-paste -t text --watch clipman store
-
-## Pulse Audio volume control
-#exec /usr/bin/pa-applet
-
-## NetworkManager applet
-exec --no-startup-id /usr/bin/nm-applet --indicator
-
-# Ulauncher daemon
-#exec ulauncher --no-window-shadow
-
-#exec --no-startup-id /usr/bin/redshift-gtk
 
 # turn off screen
 #bindsym $mod+o exec pkill -USR1 swayidle
 # workaround because screen keeps waking up
 bindsym $mod+i exec brightnessctl set 80%
 bindsym $mod+o exec brightnessctl set 0%
+
+bindsym $super+c exec "cliphist list | rofi -dmenu | cliphist decode | wl-copy;"
 

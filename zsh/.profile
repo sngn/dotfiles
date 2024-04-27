@@ -4,7 +4,7 @@ echo ".profile"
 #-----------------------------------------------------------------------------
 umask 022
 
-export EDITOR=vim
+export EDITOR=nvim
 export SYSTEMD_EDITOR=$EDITOR
 #export TERM=xterm-256color
 #export TERM=xterm-color

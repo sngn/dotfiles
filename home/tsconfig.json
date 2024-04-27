@@ -21,7 +21,7 @@
     "module": "ES2020",
     "moduleResolution": "node", // use Node's module resolution algorithm, instead of the legacy TS one
     "noEmit": true, // Do not emit compiler output files like JavaScript source code, source-maps or declarations.
-    "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statements. Ensures that any non-empty case inside a switch statement includes either break or return. 
+    "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statements. Ensures that any non-empty case inside a switch statement includes either break or return.
     //"noImplicitAny": true, // TypeScript will issue an error whenever it would have inferred any
     "noImplicitOverride": true, // Using noImplicitOverride you can ensure that the sub-classes never go out of sync, by ensuring that functions which override include the keyword override.
     "noImplicitReturns": true, // TypeScript will check all code paths in a function to ensure they return a value.
@@ -45,7 +45,7 @@
     "strictFunctionTypes": true, // When enabled, this flag causes functions parameters to be checked more correctly.
     "strictNullChecks": true, // When strictNullChecks is false, null and undefined are effectively ignored by the language. This can lead to unexpected errors at runtime.
     "strictPropertyInitialization": true, // When set to true, TypeScript will raise an error when a class property was declared but not set in the constructor.
-    "target": "ES6", // The target setting changes which JS features are downleveled and which are left intact. 
+    "target": "ES6", // The target setting changes which JS features are downleveled and which are left intact.
   },
   "include": [
     "**/*.js",
@@ -54,6 +54,6 @@
   ],
   "exclude": [
     "**/*.test.ts",
-  ]
+  ],
 }
 

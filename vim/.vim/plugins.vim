@@ -73,6 +73,7 @@ Plug 'scrooloose/nerdcommenter'          "Vim plugin for intensely orgasmic comm
 "Plug 'scrooloose/syntastic'              "Syntastic is a syntax checking plugin
 "Plug 'sukima/xmledit'                    "A filetype plugin for VIM to help edit XML files
 "Plug 'ternjs/tern_for_vim', { 'do': 'npm install' } "Tern plugin for Vim
+Plug 'theRealCarneiro/hyprland-vim-syntax'
 Plug 'tpope/vim-fugitive'                "fugitive.vim: a Git wrapper so awesome, it should be illegal
 "Plug 'tpope/vim-git'                     "Vim Git runtime files
 Plug 'tpope/vim-repeat'                  "repeat.vim: enable repeating supported plugin maps with '.'

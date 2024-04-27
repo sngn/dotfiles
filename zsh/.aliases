@@ -35,6 +35,8 @@ alias sctl-='/usr/bin/systemctl stop'                           # systemd: stop 
 alias sctlm='/usr/bin/systemctl stop'                           # systemd: stop service
 alias sctlen='/usr/bin/systemctl enable'                        # systemd: enable service
 alias sctldis='/usr/bin/systemctl disable'                      # systemd: disable service
+alias sctlu='/usr/bin/systemctl --user'
+alias sctlus='/usr/bin/systemctl --user status'                 # systemd: display --user status
 
 # LS
 alias ls='ls --color=auto'  # Colored output

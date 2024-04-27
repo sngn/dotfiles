@@ -90,7 +90,8 @@ function! TabMessage(cmd)
     silent put=message
   endif
 endfunction
-command! -nargs=+ -complete=command VSplitMessage call VSplitMessage(<q-args>)
+
+command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
 
 function! VSplitMessage(cmd)
   redir => message
@@ -104,6 +105,7 @@ function! VSplitMessage(cmd)
     silent put=message
   endif
 endfunction
+
 command! -nargs=+ -complete=command VSplitMessage call VSplitMessage(<q-args>)
 
 " Print out the current mappings.
